@@ -52,7 +52,8 @@ export default function IndividualForm(props) {
   };
 
   const handleSubmit = (e) => {
-    const data = { "form-name": "individual-form", nomineeName, businessUnit, awardCategory, entryName, elevatorPitch, pickDate, file };
+    // const data = { "form-name": "individual-form", nomineeName, businessUnit, awardCategory, entryName, elevatorPitch, pickDate, file };
+    const data = { "form-name": "individual-form", nomineeName, file };
 
     console.log(data);
     fetch("/", {
@@ -68,7 +69,7 @@ export default function IndividualForm(props) {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    if (name === "nominee-name") {
+    if (name === "nomineeName") {
       return setNomineeName(value);
     }
     if (name === "business-unit") {
@@ -90,9 +91,9 @@ export default function IndividualForm(props) {
 
         <h4>Individual Nomination</h4>
 
-        <TextInput type="text" placeholder="Nominee's name" id="nominee-name" name="nominee-name" required value={nomineeName} onChange={handleChange} />
+        <TextInput type="text" placeholder="Nominee's name" id="nominee-name" name="nomineeName" required value={nomineeName} onChange={handleChange} />
         <span>Name of person being nominated</span>
-
+        {/* 
         <TextInput type="text" placeholder="Business unit" name="business-unit" required value={businessUnit} onChange={handleChange} />
         <span>The name of the business unit the brief came from</span>
 
@@ -116,7 +117,7 @@ export default function IndividualForm(props) {
         <span>Use client or campaign title</span>
 
         <Textarea type="text" placeholder="Elevator pitch" name="elevator-pitch" minRows={4} required value={elevatorPitch} onChange={handleChange} />
-        <span>Upload supporting documents</span>
+        <span>Upload supporting documents</span> */}
 
         <StyledDragDrop {...getRootProps({ isFocused, isDragAccept, isDragReject })}>
           <input name="file" type="file" {...getInputProps()} />
@@ -132,11 +133,13 @@ export default function IndividualForm(props) {
           {fileRejections.length ? <span className="error">file too big.. Max file upload size is 300KB</span> : null}
         </StyledDragDrop>
         <span>Upload supporting documents</span>
-
+        {/* 
         <DatePicker type="text" placeholder="Completion date" name="completion-date" icon={<Image src={calendarIcon} alt="calendar icon" />} value={pickDate} onChange={setPickDate} required />
-        <span>Must be within calendar year 2022</span>
+        <span>Must be within calendar year 2022</span> */}
 
-        <StyledButton type="submit">Submit</StyledButton>
+        <StyledButton className="submitForm" type="submit">
+          Submit
+        </StyledButton>
       </form>
     </>
   );

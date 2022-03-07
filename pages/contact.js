@@ -13,7 +13,7 @@ import TestForm from "@/components/forms/TestForm";
 import AnotherTest from "@/components/forms/AnotherTest";
 
 const Contact = () => {
-  const [submitterName, setSubmitterName] = useState("");
+  // const [submitterName, setSubmitterName] = useState("");
 
   return (
     <main>
