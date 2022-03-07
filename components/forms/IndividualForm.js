@@ -35,29 +35,29 @@ export default function IndividualForm(props) {
     </span>
   ));
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    if (name === "nominee-name") {
-      return setNomineeName(value);
-    }
-    if (name === "business-unit") {
-      return setBusinessUnit(value);
-    }
-    if (name === "award-category") {
-      return setAwardCategory(value);
-    }
+  //   const handleChange = (e) => {
+  //     const { name, value } = e.target;
+  //     if (name === "nominee-name") {
+  //       return setNomineeName(value);
+  //     }
+  //     if (name === "business-unit") {
+  //       return setBusinessUnit(value);
+  //     }
+  //     if (name === "award-category") {
+  //       return setAwardCategory(value);
+  //     }
 
-    if (name === "entry-name") {
-      return setEntryName(value);
-    }
+  //     if (name === "entry-name") {
+  //       return setEntryName(value);
+  //     }
 
-    if (name === "elevator-pitch") {
-      return setElevatorPitch(value);
-    }
-    if (name === "completion-date") {
-      return setPickDate(value);
-    }
-  };
+  //     if (name === "elevator-pitch") {
+  //       return setElevatorPitch(value);
+  //     }
+  //     if (name === "completion-date") {
+  //       return setPickDate(value);
+  //     }
+  //   };
 
   // end form logic
 
@@ -73,10 +73,10 @@ export default function IndividualForm(props) {
         <TextInput placeholder="Nominee's name" id="nominee-name" name="nominee-name" required />
         <span>Name of person being nominated</span>
 
-        <TextInput placeholder="Business unit" name="business-unit" value={businessUnit} onChange={handleChange} required />
+        <TextInput placeholder="Business unit" name="business-unit" required />
         <span>The name of the business unit the brief came from</span>
 
-        {/* <Select
+        <Select
           placeholder="Award Category"
           name="award-category"
           data={[
@@ -86,30 +86,29 @@ export default function IndividualForm(props) {
             { value: "vue", label: "Vue" },
           ]}
           value={awardCategory}
-          onChange={handleChange}
+          onChange={setAwardCategory}
           required
         />
-        <span>Select from drop down</span> */}
+        <span>Select from drop down</span>
 
-        <TextInput placeholder="Entry name" name="entry-name" value={entryName} onChange={handleChange} required />
+        <TextInput placeholder="Entry name" name="entry-name" required />
         <span>Use client or campaign title</span>
 
-        <Textarea placeholder="Elevator pitch" name="elevator-pitch" minRows={4} value={elevatorPitch} onChange={handleChange} required />
+        <Textarea placeholder="Elevator pitch" name="elevator-pitch" minRows={4} required />
         <span>Upload supporting documents</span>
 
-        {/* <StyledDragDrop {...getRootProps({ isFocused, isDragAccept, isDragReject })}>
+        <StyledDragDrop {...getRootProps({ isFocused, isDragAccept, isDragReject })}>
           <input name="file" type="file" {...getInputProps()} />
           {acceptedFileItems.length ? <span>{acceptedFileItems}</span> : <p>Drag and drop some files here, or click to select files</p>}
-
         </StyledDragDrop>
-        <span>Upload supporting documents</span> */}
+        <span>Upload supporting documents</span>
 
-        {/* <DatePicker placeholder="Completion date" name="completion-date" icon={<Image src={calendarIcon} alt="calendar icon" />} value={pickDate} onChange={handleChange} required />
-        <span>Must be within calendar year 2022</span> */}
+        <DatePicker placeholder="Completion date" name="completion-date" icon={<Image src={calendarIcon} alt="calendar icon" />} value={pickDate} onChange={setPickDate} required />
+        <span>Must be within calendar year 2022</span>
 
-        <button id="submitForm" type="submit">
+        <StyledButton id="submitForm" type="submit">
           Submit
-        </button>
+        </StyledButton>
       </form>
     </>
   );
@@ -144,4 +143,9 @@ const StyledDragDrop = styled.div`
   color: #bdbdbd;
   outline: none;
   transition: border 0.24s ease-in-out;
+  cursor: pointer;
+`;
+
+const StyledButton = styled.button`
+  cursor: pointer;
 `;
