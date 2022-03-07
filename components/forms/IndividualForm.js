@@ -8,6 +8,8 @@ import styled from "styled-components";
 
 import { useDropzone } from "react-dropzone";
 
+import { useRouter } from "next/router";
+
 const bytesToMegaBytes = (bytes, roundTo) => (roundTo ? (bytes / (1024 * 1024)).toFixed(roundTo) : bytes / (1024 * 1024));
 
 export default function IndividualForm(props) {
@@ -19,61 +21,84 @@ export default function IndividualForm(props) {
   const [elevatorPitch, setElevatorPitch] = useState("");
   const [pickDate, setPickDate] = useState("");
   const [file, setFile] = useState({});
+
+  const router = useRouter();
   // dropzone files
 
   const onDrop = useCallback((acceptedFiles) => {
     console.log(acceptedFiles);
     setFile(acceptedFiles[0]);
   }, []);
-  const { getRootProps, getInputProps, isDragActive, acceptedFiles, isFocused, isDragAccept, isDragReject } = useDropzone({ onDrop });
+  const { getRootProps, getInputProps, isDragActive, acceptedFiles, fileRejections, isFocused, isDragAccept, isDragReject } = useDropzone({ onDrop, maxSize: 300000 });
 
   // display files that have been uploaded
 
   const acceptedFileItems = acceptedFiles.map((file) => (
-    <span key={file.path}>
+    <span className="success" key={file.path}>
       {file.path} - {bytesToMegaBytes(file.size, 2)} MB
     </span>
   ));
 
-  //   const handleChange = (e) => {
-  //     const { name, value } = e.target;
-  //     if (name === "nominee-name") {
-  //       return setNomineeName(value);
-  //     }
-  //     if (name === "business-unit") {
-  //       return setBusinessUnit(value);
-  //     }
-  //     if (name === "award-category") {
-  //       return setAwardCategory(value);
-  //     }
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    if (name === "nominee-name") {
+      return setNomineeName(value);
+    }
+    if (name === "business-unit") {
+      return setBusinessUnit(value);
+    }
+    //   if (name === "award-category") {
+    //     return setAwardCategory(value);
+    //   }
 
-  //     if (name === "entry-name") {
-  //       return setEntryName(value);
-  //     }
+    if (name === "entry-name") {
+      return setEntryName(value);
+    }
 
-  //     if (name === "elevator-pitch") {
-  //       return setElevatorPitch(value);
-  //     }
-  //     if (name === "completion-date") {
-  //       return setPickDate(value);
-  //     }
-  //   };
+    if (name === "elevator-pitch") {
+      return setElevatorPitch(value);
+    }
+    //   if (name === "completion-date") {
+    //     return setPickDate(value);
+    //   }
+  };
 
   // end form logic
 
   // Front end display
 
+  const encode = (data) => {
+    const formData = new FormData();
+    Object.keys(data).forEach((k) => {
+      formData.append(k, data[k]);
+    });
+    return formData;
+  };
+
+  const handleSubmit = (e) => {
+    const data = { "form-name": "individual-form", nomineeName, businessUnit, awardCategory, entryName, elevatorPitch, pickDate, file };
+
+    fetch("/", {
+      method: "POST",
+      // headers: { "Content-Type": 'multipart/form-data; boundary=random' },
+      body: encode(data),
+    })
+      .then(() => router.push("/success"))
+      .catch((error) => console.log(error));
+
+    e.preventDefault();
+  };
   return (
     <>
-      <form name="individual-form" action="/success" method="POST" data-netlify="true">
+      <form onSubmit={handleSubmit} name="individual-form" action="/success" method="POST" data-netlify="true">
         <input type="hidden" name="form-name" value="individual-form" />
 
         <h4>Individual Nomination</h4>
 
-        <TextInput placeholder="Nominee's name" id="nominee-name" name="nominee-name" required />
+        <TextInput placeholder="Nominee's name" id="nominee-name" name="nominee-name" required value={nomineeName} onChange={handleChange} />
         <span>Name of person being nominated</span>
 
-        <TextInput placeholder="Business unit" name="business-unit" required />
+        <TextInput placeholder="Business unit" name="business-unit" required value={businessUnit} onChange={handleChange} />
         <span>The name of the business unit the brief came from</span>
 
         <Select
@@ -91,15 +116,24 @@ export default function IndividualForm(props) {
         />
         <span>Select from drop down</span>
 
-        <TextInput placeholder="Entry name" name="entry-name" required />
+        <TextInput placeholder="Entry name" name="entry-name" required value={entryName} onChange={handleChange} />
         <span>Use client or campaign title</span>
 
-        <Textarea placeholder="Elevator pitch" name="elevator-pitch" minRows={4} required />
+        <Textarea placeholder="Elevator pitch" name="elevator-pitch" minRows={4} required value={elevatorPitch} onChange={handleChange} />
         <span>Upload supporting documents</span>
 
         <StyledDragDrop {...getRootProps({ isFocused, isDragAccept, isDragReject })}>
           <input name="file" type="file" {...getInputProps()} />
-          {acceptedFileItems.length ? <span>{acceptedFileItems}</span> : <p>Drag and drop some files here, or click to select files</p>}
+          {acceptedFileItems.length ? (
+            <span>{acceptedFileItems}</span>
+          ) : (
+            <p>
+              Drag and drop some files here, or click to select files.
+              <br />
+              Max upload size is 300KB.
+            </p>
+          )}
+          {fileRejections.length ? <span className="error">file too big.. Max file upload size is 300KB</span> : null}
         </StyledDragDrop>
         <span>Upload supporting documents</span>
 
@@ -144,6 +178,16 @@ const StyledDragDrop = styled.div`
   outline: none;
   transition: border 0.24s ease-in-out;
   cursor: pointer;
+
+  span.error {
+    color: red;
+    font-size: 1.25rem;
+  }
+
+  span.success {
+    color: green;
+    font-size: 1.25rem;
+  }
 `;
 
 const StyledButton = styled.button`

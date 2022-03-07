@@ -23,9 +23,9 @@ const HomePage = () => {
           <InnerContainer>
             {/* <TextInput placeholder="Your name" value={submitterName} onChange={setSubmitterName} /> */}
 
-            {/* <IndividualForm /> */}
+            <IndividualForm />
 
-            <TestForm />
+            {/* <TestForm /> */}
           </InnerContainer>
         </Container>
       </Section>

@@ -1,12 +1,16 @@
 import React, { useState, useCallback } from "react";
 import { useDropzone } from "react-dropzone";
 
+import { useRouter } from "next/router";
+
 function TestForm() {
   const [name, setName] = useState("");
   const [status, setStatus] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [file, setFile] = useState({});
+
+  const router = useRouter();
 
   const onDrop = useCallback((acceptedFiles) => {
     console.log(acceptedFiles);
@@ -30,7 +34,7 @@ function TestForm() {
       // headers: { "Content-Type": 'multipart/form-data; boundary=random' },
       body: encode(data),
     })
-      .then(() => setStatus("Form Submission Successful!!"))
+      .then(() => router.push("/success"))
       .catch((error) => setStatus("Form Submission Failed!"));
 
     e.preventDefault();
