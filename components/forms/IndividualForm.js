@@ -56,6 +56,7 @@ export default function IndividualForm(props) {
     const data = { "form-name": "individual-form", nomineeName, file };
 
     console.log(data);
+
     fetch("/", {
       method: "POST",
       //   headers: { "Content-Type": "multipart/form-data; boundary=random" },
