@@ -14,7 +14,7 @@ const bytesToMegaBytes = (bytes, roundTo) => (roundTo ? (bytes / (1024 * 1024)).
 
 export default function IndividualForm(props) {
   // state management
-  const [nomineename, setNomineeName] = useState("");
+  const [nomineeName, setNomineeName] = useState("");
   const [businessUnit, setBusinessUnit] = useState("");
   const [awardCategory, setAwardCategory] = useState("");
   const [entryName, setEntryName] = useState("");
@@ -35,7 +35,7 @@ export default function IndividualForm(props) {
 
   const acceptedFileItems = acceptedFiles.map((file) => (
     <span className="success" key={file.path}>
-      {file.path} - {bytesToMegaBytes(file.size, 2)} MB
+      {file.path} - {bytesToMegaBytes(file.size, 3)} MB
     </span>
   ));
 
@@ -52,19 +52,16 @@ export default function IndividualForm(props) {
   };
 
   const handleSubmit = (e) => {
-    const data = { "form-name": "individual-form", nomineename, businessUnit, awardCategory, entryName, elevatorPitch, pickDate, file };
+    const data = { "form-name": "individual-form", nomineeName, businessUnit, awardCategory, entryName, elevatorPitch, pickDate, file };
 
     console.log(data);
     fetch("/", {
       method: "POST",
       //   headers: { "Content-Type": "multipart/form-data; boundary=random" },
-      body: data,
+      body: encode(data),
     })
-      .then(() => {
-        // console.log(encode(data));
-        router.push("/success");
-      })
-      .catch((error) => console.log(error));
+      .then(() => router.push("/success"))
+      .catch((error) => console.log("Form Submission Failed!"));
 
     e.preventDefault();
   };
@@ -93,7 +90,7 @@ export default function IndividualForm(props) {
 
         <h4>Individual Nomination</h4>
 
-        <TextInput placeholder="Nominee's name" id="nominee-name" name="nominee-name" required value={nomineename} onChange={handleChange} />
+        <TextInput placeholder="Nominee's name" id="nominee-name" name="nominee-name" required value={nomineeName} onChange={handleChange} />
         <span>Name of person being nominated</span>
 
         <TextInput placeholder="Business unit" name="business-unit" required value={businessUnit} onChange={handleChange} />

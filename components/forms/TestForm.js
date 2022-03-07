@@ -27,21 +27,17 @@ function TestForm() {
   };
 
   const handleSubmit = (e) => {
-    e.preventDefault();
     const data = { "form-name": "test-form", name, email, message, file };
-
-    console.log(encode(data));
 
     fetch("/", {
       method: "POST",
       // headers: { "Content-Type": 'multipart/form-data; boundary=random' },
       body: encode(data),
     })
-      .then(() => {
-        console.log(data);
-        // router.push("/success")
-      })
+      .then(() => router.push("/success"))
       .catch((error) => setStatus("Form Submission Failed!"));
+
+    e.preventDefault();
   };
 
   const handleChange = (e) => {
