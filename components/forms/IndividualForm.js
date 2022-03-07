@@ -87,6 +87,10 @@ export default function IndividualForm(props) {
     if (name === "elevatorPitch") {
       return setElevatorPitch(value);
     }
+
+    if (name === "awardCategory") {
+      return setElevatorPitch(value);
+    }
   };
   return (
     <>
@@ -104,10 +108,10 @@ export default function IndividualForm(props) {
         <Select
           type="text"
           placeholder="Award Category"
-          name="award-category"
+          name="awardCategory"
           data={[
             { value: "react", label: "React" },
-            { value: "ng", label: "Angular" },
+            { value: "angular", label: "Angular" },
             { value: "svelte", label: "Svelte" },
             { value: "vue", label: "Vue" },
           ]}
@@ -142,7 +146,7 @@ export default function IndividualForm(props) {
           inputFormat="DD/MM/YYYY"
           type="text"
           placeholder="Completion date"
-          name="completion-date"
+          name="completionDate"
           icon={<Image src={calendarIcon} alt="calendar icon" />}
           value={pickDate}
           onChange={setPickDate}
