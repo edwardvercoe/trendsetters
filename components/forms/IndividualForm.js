@@ -36,30 +36,6 @@ export default function IndividualForm(props) {
     </span>
   ));
 
-  // form logic
-
-  const encode = (data) => {
-    const formData = new FormData();
-    Object.keys(data).forEach((k) => {
-      formData.append(k, data[k]);
-    });
-    return formData;
-  };
-
-  const handleSubmit = (e) => {
-    const data = { "form-name": "individual-form", nomineeName, awardCategory, entryName, elevatorPitch, pickDate, businessUnit, file };
-
-    fetch("/", {
-      method: "POST",
-      // headers: { "Content-Type": 'multipart/form-data; boundary=random' },
-      body: encode(data),
-    })
-      .then(() => setStatus("Form Submission Successful!!"))
-      .catch((error) => setStatus("Form Submission Failed!"));
-
-    e.preventDefault();
-  };
-
   const handleChange = (e) => {
     const { name, value } = e.target;
     if (name === "nominee-name") {
@@ -90,7 +66,7 @@ export default function IndividualForm(props) {
 
   return (
     <>
-      <form onSubmit={handleSubmit} action="/thank-you/" netlify>
+      <form name="individual-form" netlify>
         <h4>Individual Nomination</h4>
 
         <TextInput placeholder="Nominee's name" id="nominee-name" name="nominee-name" required />

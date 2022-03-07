@@ -19,7 +19,7 @@ const HomePage = () => {
         <Container>
           <Heading>TRENDsetters nomination form</Heading>
           <InnerContainer>
-            <TextInput placeholder="Your name" required value={submitterName} onChange={setSubmitterName} />
+            {/* <TextInput placeholder="Your name" value={submitterName} onChange={setSubmitterName} /> */}
 
             <IndividualForm />
           </InnerContainer>
