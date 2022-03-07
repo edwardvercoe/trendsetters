@@ -9,6 +9,8 @@ import Hero from "@/components/Hero";
 
 import { TextInput } from "@mantine/core";
 
+import TestForm from "@/components/forms/TestForm";
+
 const HomePage = () => {
   const [submitterName, setSubmitterName] = useState("");
 
@@ -21,7 +23,9 @@ const HomePage = () => {
           <InnerContainer>
             {/* <TextInput placeholder="Your name" value={submitterName} onChange={setSubmitterName} /> */}
 
-            <IndividualForm />
+            {/* <IndividualForm /> */}
+
+            <TestForm />
           </InnerContainer>
         </Container>
       </Section>
