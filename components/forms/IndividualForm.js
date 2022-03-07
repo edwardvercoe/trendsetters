@@ -53,7 +53,7 @@ export default function IndividualForm(props) {
 
   const handleSubmit = (e) => {
     // const data = { "form-name": "individual-form", nomineeName, businessUnit, awardCategory, entryName, elevatorPitch, pickDate, file };
-    const data = { "form-name": "individual-form", nomineeName, file };
+    const data = { "form-name": "individual-form", nomineeName, businessUnit, entryName, elevatorPitch, file };
 
     console.log(data);
 
