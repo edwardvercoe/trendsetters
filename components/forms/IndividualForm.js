@@ -19,7 +19,7 @@ export default function IndividualForm(props) {
   const [awardCategory, setAwardCategory] = useState("");
   const [entryName, setEntryName] = useState("");
   const [elevatorPitch, setElevatorPitch] = useState("");
-  const [pickDate, setPickDate] = useState("");
+  const [completionDate, setCompletionDate] = useState("");
   const [file, setFile] = useState({});
 
   const router = useRouter();
@@ -52,11 +52,11 @@ export default function IndividualForm(props) {
   };
 
   const handleSubmit = (e) => {
-    // const newDate = JSON.stringify(pickDate);
-    const newDate = String(pickDate);
+    const newDate = JSON.stringify(pickDate);
+    // const newDate = String(pickDate);
     // console.log(newDate);
     // console.log("type of new date is " + typeof newDate);
-    const data = { "form-name": "individual-form", nomineeName, businessUnit, entryName, elevatorPitch, awardCategory, completion: newDate, file };
+    const data = { "form-name": "individual-form", nomineeName, businessUnit, entryName, elevatorPitch, awardCategory, completionDate: newDate, file };
 
     console.log(data);
 
@@ -148,8 +148,8 @@ export default function IndividualForm(props) {
           placeholder="Completion date"
           name="completionDate"
           icon={<Image src={calendarIcon} alt="calendar icon" />}
-          value={pickDate}
-          onChange={setPickDate}
+          value={completionDate}
+          onChange={setCompletionDate}
           required
         />
         <span>Must be within calendar year 2022</span>
