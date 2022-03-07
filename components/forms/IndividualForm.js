@@ -19,7 +19,6 @@ export default function IndividualForm(props) {
   const [elevatorPitch, setElevatorPitch] = useState("");
   const [pickDate, setPickDate] = useState("");
   const [file, setFile] = useState({});
-  const [status, setStatus] = useState("");
   // dropzone files
 
   const onDrop = useCallback((acceptedFiles) => {
@@ -67,6 +66,8 @@ export default function IndividualForm(props) {
   return (
     <>
       <form name="individual-form" action="/success" method="POST" data-netlify="true">
+        <input type="hidden" name="form-name" value="individual-form" />
+
         <h4>Individual Nomination</h4>
 
         <TextInput placeholder="Nominee's name" id="nominee-name" name="nominee-name" required />
@@ -75,7 +76,7 @@ export default function IndividualForm(props) {
         <TextInput placeholder="Business unit" name="business-unit" value={businessUnit} onChange={handleChange} required />
         <span>The name of the business unit the brief came from</span>
 
-        <Select
+        {/* <Select
           placeholder="Award Category"
           name="award-category"
           data={[
@@ -88,7 +89,7 @@ export default function IndividualForm(props) {
           onChange={handleChange}
           required
         />
-        <span>Select from drop down</span>
+        <span>Select from drop down</span> */}
 
         <TextInput placeholder="Entry name" name="entry-name" value={entryName} onChange={handleChange} required />
         <span>Use client or campaign title</span>
@@ -96,22 +97,20 @@ export default function IndividualForm(props) {
         <Textarea placeholder="Elevator pitch" name="elevator-pitch" minRows={4} value={elevatorPitch} onChange={handleChange} required />
         <span>Upload supporting documents</span>
 
-        <StyledDragDrop {...getRootProps({ isFocused, isDragAccept, isDragReject })}>
+        {/* <StyledDragDrop {...getRootProps({ isFocused, isDragAccept, isDragReject })}>
           <input name="file" type="file" {...getInputProps()} />
           {acceptedFileItems.length ? <span>{acceptedFileItems}</span> : <p>Drag and drop some files here, or click to select files</p>}
-          {/* {isDragActive ? <p>Drop the files here ...</p> : <p>Drag and drop some files here, or click to select files</p>}
-        <span>{acceptedFileItems}</span> */}
-        </StyledDragDrop>
-        <span>Upload supporting documents</span>
 
-        <DatePicker placeholder="Completion date" name="completion-date" icon={<Image src={calendarIcon} alt="calendar icon" />} value={pickDate} onChange={handleChange} required />
-        <span>Must be within calendar year 2022</span>
+        </StyledDragDrop>
+        <span>Upload supporting documents</span> */}
+
+        {/* <DatePicker placeholder="Completion date" name="completion-date" icon={<Image src={calendarIcon} alt="calendar icon" />} value={pickDate} onChange={handleChange} required />
+        <span>Must be within calendar year 2022</span> */}
 
         <button id="submitForm" type="submit">
           Submit
         </button>
       </form>
-      <h3>{status}</h3>
     </>
   );
 }
