@@ -90,13 +90,14 @@ export default function IndividualForm(props) {
 
         <h4>Individual Nomination</h4>
 
-        <TextInput placeholder="Nominee's name" id="nominee-name" name="nominee-name" required value={nomineeName} onChange={handleChange} />
+        <TextInput type="text" placeholder="Nominee's name" id="nominee-name" name="nominee-name" required value={nomineeName} onChange={handleChange} />
         <span>Name of person being nominated</span>
 
-        <TextInput placeholder="Business unit" name="business-unit" required value={businessUnit} onChange={handleChange} />
+        <TextInput type="text" placeholder="Business unit" name="business-unit" required value={businessUnit} onChange={handleChange} />
         <span>The name of the business unit the brief came from</span>
 
         <Select
+          type="text"
           placeholder="Award Category"
           name="award-category"
           data={[
@@ -111,10 +112,10 @@ export default function IndividualForm(props) {
         />
         <span>Select from drop down</span>
 
-        <TextInput placeholder="Entry name" name="entry-name" required value={entryName} onChange={handleChange} />
+        <TextInput type="text" placeholder="Entry name" name="entry-name" required value={entryName} onChange={handleChange} />
         <span>Use client or campaign title</span>
 
-        <Textarea placeholder="Elevator pitch" name="elevator-pitch" minRows={4} required value={elevatorPitch} onChange={handleChange} />
+        <Textarea type="text" placeholder="Elevator pitch" name="elevator-pitch" minRows={4} required value={elevatorPitch} onChange={handleChange} />
         <span>Upload supporting documents</span>
 
         <StyledDragDrop {...getRootProps({ isFocused, isDragAccept, isDragReject })}>
@@ -132,12 +133,10 @@ export default function IndividualForm(props) {
         </StyledDragDrop>
         <span>Upload supporting documents</span>
 
-        <DatePicker placeholder="Completion date" name="completion-date" icon={<Image src={calendarIcon} alt="calendar icon" />} value={pickDate} onChange={setPickDate} required />
+        <DatePicker type="text" placeholder="Completion date" name="completion-date" icon={<Image src={calendarIcon} alt="calendar icon" />} value={pickDate} onChange={setPickDate} required />
         <span>Must be within calendar year 2022</span>
 
-        <StyledButton id="submitForm" type="submit">
-          Submit
-        </StyledButton>
+        <StyledButton type="submit">Submit</StyledButton>
       </form>
     </>
   );
