@@ -52,10 +52,11 @@ export default function IndividualForm(props) {
   };
 
   const handleSubmit = (e) => {
-    // const data = { "form-name": "individual-form", nomineeName, businessUnit, awardCategory, entryName, elevatorPitch, pickDate, file };
-    const data = { "form-name": "individual-form", nomineeName, businessUnit, entryName, elevatorPitch, file };
-
-    console.log(data);
+    // const newDate = JSON.stringify(pickDate);
+    const newDate = String(pickDate);
+    // console.log(newDate);
+    // console.log("type of new date is " + typeof newDate);
+    const data = { "form-name": "individual-form", nomineeName, businessUnit, entryName, elevatorPitch, awardCategory, pickDate: newDate, file };
 
     fetch("/", {
       method: "POST",
@@ -97,7 +98,7 @@ export default function IndividualForm(props) {
 
         <TextInput type="text" placeholder="Business unit" name="businessUnit" required value={businessUnit} onChange={handleChange} />
         <span>The name of the business unit the brief came from</span>
-        {/* 
+
         <Select
           type="text"
           placeholder="Award Category"
@@ -113,7 +114,6 @@ export default function IndividualForm(props) {
           required
         />
         <span>Select from drop down</span>
-        */}
 
         <TextInput type="text" placeholder="Entry name" name="entryName" required value={entryName} onChange={handleChange} />
         <span>Use client or campaign title</span>
@@ -135,9 +135,18 @@ export default function IndividualForm(props) {
           {fileRejections.length ? <span className="error">file too big.. Max file upload size is 300KB</span> : null}
         </StyledDragDrop>
         <span>Upload supporting documents</span>
-        {/* 
-        <DatePicker type="text" placeholder="Completion date" name="completion-date" icon={<Image src={calendarIcon} alt="calendar icon" />} value={pickDate} onChange={setPickDate} required />
-        <span>Must be within calendar year 2022</span> */}
+
+        <DatePicker
+          inputFormat="DD/MM/YYYY"
+          type="text"
+          placeholder="Completion date"
+          name="completion-date"
+          icon={<Image src={calendarIcon} alt="calendar icon" />}
+          value={pickDate}
+          onChange={setPickDate}
+          required
+        />
+        <span>Must be within calendar year 2022</span>
 
         <StyledButton className="submitForm" type="submit">
           Submit
