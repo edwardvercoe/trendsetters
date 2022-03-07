@@ -51,7 +51,9 @@ function TestForm() {
 
   return (
     <div className="App">
-      <form onSubmit={handleSubmit} action="/thank-you/">
+      <form onSubmit={handleSubmit} name="test-form" action="/success" method="POST" data-netlify="true">
+        <input type="hidden" name="form-name" value="tesdt-form" />
+
         <p>
           <label>
             Your Name: <input type="text" name="name" value={name} onChange={handleChange} />
