@@ -14,7 +14,7 @@ const bytesToMegaBytes = (bytes, roundTo) => (roundTo ? (bytes / (1024 * 1024)).
 
 export default function IndividualForm(props) {
   // state management
-  const [nomineeName, setNomineeName] = useState("");
+  const [nomineename, setNomineeName] = useState("");
   const [businessUnit, setBusinessUnit] = useState("");
   const [awardCategory, setAwardCategory] = useState("");
   const [entryName, setEntryName] = useState("");
@@ -39,30 +39,6 @@ export default function IndividualForm(props) {
     </span>
   ));
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    if (name === "nominee-name") {
-      return setNomineeName(value);
-    }
-    if (name === "business-unit") {
-      return setBusinessUnit(value);
-    }
-    //   if (name === "award-category") {
-    //     return setAwardCategory(value);
-    //   }
-
-    if (name === "entry-name") {
-      return setEntryName(value);
-    }
-
-    if (name === "elevator-pitch") {
-      return setElevatorPitch(value);
-    }
-    //   if (name === "completion-date") {
-    //     return setPickDate(value);
-    //   }
-  };
-
   // end form logic
 
   // Front end display
@@ -76,17 +52,39 @@ export default function IndividualForm(props) {
   };
 
   const handleSubmit = (e) => {
-    const data = { "form-name": "individual-form", nomineeName, businessUnit, awardCategory, entryName, elevatorPitch, pickDate, file };
+    const data = { "form-name": "individual-form", nomineename, businessUnit, awardCategory, entryName, elevatorPitch, pickDate, file };
 
+    console.log(data);
     fetch("/", {
       method: "POST",
       //   headers: { "Content-Type": "multipart/form-data; boundary=random" },
-      body: encode(data),
+      body: data,
     })
-      .then(() => router.push("/success"))
+      .then(() => {
+        console.log(encode(data));
+        // router.push("/success");
+      })
       .catch((error) => console.log(error));
 
     e.preventDefault();
+  };
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    if (name === "nominee-name") {
+      return setNomineeName(value);
+    }
+    if (name === "business-unit") {
+      return setBusinessUnit(value);
+    }
+
+    if (name === "entry-name") {
+      return setEntryName(value);
+    }
+
+    if (name === "elevator-pitch") {
+      return setElevatorPitch(value);
+    }
   };
   return (
     <>
@@ -95,7 +93,7 @@ export default function IndividualForm(props) {
 
         <h4>Individual Nomination</h4>
 
-        <TextInput placeholder="Nominee's name" id="nominee-name" name="nominee-name" required value={nomineeName} onChange={handleChange} />
+        <TextInput placeholder="Nominee's name" id="nominee-name" name="nominee-name" required value={nomineename} onChange={handleChange} />
         <span>Name of person being nominated</span>
 
         <TextInput placeholder="Business unit" name="business-unit" required value={businessUnit} onChange={handleChange} />

@@ -1,16 +1,12 @@
 import React, { useState, useCallback } from "react";
 import { useDropzone } from "react-dropzone";
 
-import { useRouter } from "next/router";
-
-function TestForm() {
+function AnotherTest() {
   const [name, setName] = useState("");
   const [status, setStatus] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [file, setFile] = useState({});
-
-  const router = useRouter();
 
   const onDrop = useCallback((acceptedFiles) => {
     console.log(acceptedFiles);
@@ -27,10 +23,7 @@ function TestForm() {
   };
 
   const handleSubmit = (e) => {
-    e.preventDefault();
-    const data = { "form-name": "test-form", name, email, message, file };
-
-    console.log(encode(data));
+    const data = { "form-name": "contact", name, email, message, file };
 
     fetch("/", {
       method: "POST",
@@ -38,10 +31,12 @@ function TestForm() {
       body: encode(data),
     })
       .then(() => {
-        console.log(data);
-        // router.push("/success")
+        console.log(encode(data));
+        setStatus("Form Submission Successful!!");
       })
       .catch((error) => setStatus("Form Submission Failed!"));
+
+    e.preventDefault();
   };
 
   const handleChange = (e) => {
@@ -59,9 +54,7 @@ function TestForm() {
 
   return (
     <div className="App">
-      <form onSubmit={handleSubmit} name="test-form" action="/success" method="POST" data-netlify="true">
-        <input type="hidden" name="form-name" value="test-form" />
-
+      <form onSubmit={handleSubmit} action="/thank-you/">
         <p>
           <label>
             Your Name: <input type="text" name="name" value={name} onChange={handleChange} />
@@ -78,8 +71,8 @@ function TestForm() {
           </label>
         </p>
         <div {...getRootProps()}>
-          <input {...getInputProps()} name="file" type="file" />
-          {isDragActive ? <p>Drop the files here ...</p> : <p>Drag and drop some files here, or click to select files</p>}
+          <input {...getInputProps()} />
+          {isDragActive ? <p>Drop the files here ...</p> : <p>Drag drop some files here, or click to select files</p>}
         </div>
         <p>
           <button type="submit">Send</button>
@@ -90,4 +83,4 @@ function TestForm() {
   );
 }
 
-export default TestForm;
+export default AnotherTest;
