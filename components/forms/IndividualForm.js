@@ -61,8 +61,8 @@ export default function IndividualForm(props) {
       body: data,
     })
       .then(() => {
-        console.log(encode(data));
-        // router.push("/success");
+        // console.log(encode(data));
+        router.push("/success");
       })
       .catch((error) => console.log(error));
 
