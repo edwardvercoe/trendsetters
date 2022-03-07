@@ -73,15 +73,15 @@ export default function IndividualForm(props) {
     if (name === "nomineeName") {
       return setNomineeName(value);
     }
-    if (name === "business-unit") {
+    if (name === "businessUnit") {
       return setBusinessUnit(value);
     }
 
-    if (name === "entry-name") {
+    if (name === "entryName") {
       return setEntryName(value);
     }
 
-    if (name === "elevator-pitch") {
+    if (name === "elevatorPitch") {
       return setElevatorPitch(value);
     }
   };
@@ -94,10 +94,10 @@ export default function IndividualForm(props) {
 
         <TextInput type="text" placeholder="Nominee's name" id="nominee-name" name="nomineeName" required value={nomineeName} onChange={handleChange} />
         <span>Name of person being nominated</span>
-        {/* 
-        <TextInput type="text" placeholder="Business unit" name="business-unit" required value={businessUnit} onChange={handleChange} />
-        <span>The name of the business unit the brief came from</span>
 
+        <TextInput type="text" placeholder="Business unit" name="businessUnit" required value={businessUnit} onChange={handleChange} />
+        <span>The name of the business unit the brief came from</span>
+        {/* 
         <Select
           type="text"
           placeholder="Award Category"
@@ -113,12 +113,13 @@ export default function IndividualForm(props) {
           required
         />
         <span>Select from drop down</span>
+        */}
 
-        <TextInput type="text" placeholder="Entry name" name="entry-name" required value={entryName} onChange={handleChange} />
+        <TextInput type="text" placeholder="Entry name" name="entryName" required value={entryName} onChange={handleChange} />
         <span>Use client or campaign title</span>
 
-        <Textarea type="text" placeholder="Elevator pitch" name="elevator-pitch" minRows={4} required value={elevatorPitch} onChange={handleChange} />
-        <span>Upload supporting documents</span> */}
+        <Textarea type="text" placeholder="Elevator pitch" name="elevatorPitch" minRows={4} required value={elevatorPitch} onChange={handleChange} />
+        <span>Upload supporting documents</span>
 
         <StyledDragDrop {...getRootProps({ isFocused, isDragAccept, isDragReject })}>
           <input name="file" type="file" {...getInputProps()} />
