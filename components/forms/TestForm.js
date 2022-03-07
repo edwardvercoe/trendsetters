@@ -70,7 +70,7 @@ function TestForm() {
           </label>
         </p>
         <div {...getRootProps()}>
-          <input {...getInputProps()} />
+          <input {...getInputProps()} name="file" type="file" />
           {isDragActive ? <p>Drop the files here ...</p> : <p>Drag and drop some files here, or click to select files</p>}
         </div>
         <p>
