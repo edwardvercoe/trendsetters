@@ -1,48 +1,83 @@
-export default function ContactForm() {
+import React, { useState, useCallback } from "react";
+import { useDropzone } from "react-dropzone";
+
+function TestForm() {
+  const [name, setName] = useState("");
+  const [status, setStatus] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const [file, setFile] = useState({});
+
+  const onDrop = useCallback((acceptedFiles) => {
+    console.log(acceptedFiles);
+    setFile(acceptedFiles[0]);
+  }, []);
+  const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop });
+
+  const encode = (data) => {
+    const formData = new FormData();
+    Object.keys(data).forEach((k) => {
+      formData.append(k, data[k]);
+    });
+    return formData;
+  };
+
+  const handleSubmit = (e) => {
+    const data = { "form-name": "test-form", name, email, message, file };
+
+    fetch("/", {
+      method: "POST",
+      // headers: { "Content-Type": 'multipart/form-data; boundary=random' },
+      body: encode(data),
+    })
+      .then(() => setStatus("Form Submission Successful!!"))
+      .catch((error) => setStatus("Form Submission Failed!"));
+
+    e.preventDefault();
+  };
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    if (name === "name") {
+      return setName(value);
+    }
+    if (name === "email") {
+      return setEmail(value);
+    }
+    if (name === "message") {
+      return setMessage(value);
+    }
+  };
+
   return (
-    <form name="contact" action="/success" method="POST" data-netlify="true">
-      <input type="hidden" name="form-name" value="contact" />
-      <p>
-        <label htmlFor="yourname">Your Name:</label>
-        <input type="text" name="name" id="yourname" />
-      </p>
-      <p>
-        <label htmlFor="youremail">Your Email: </label> <input type="email" name="email" id="youremail" />
-      </p>
-      <p>
-        <label htmlFor="yourmessage">Message: </label>
-        <textarea name="message" id="yourmessage"></textarea>
-      </p>
-      <p>
-        <button type="submit">Send</button>
-      </p>
-      <style jsx>{`
-        label {
-          font-size: 0.8rem;
-        }
-
-        input,
-        textarea {
-          width: 100%;
-          height: 40px;
-          border: none;
-          border-bottom: 1px solid #d6d6d6;
-          font-size: 1.3rem;
-        }
-
-        input:focus,
-        textarea:focus {
-          outline: 1px dotted #d6d6d6;
-        }
-
-        button {
-          padding: 20px;
-          background: black;
-          color: white;
-          border-radius: 10px;
-          font-size: 1.3rem;
-        }
-      `}</style>
-    </form>
+    <div className="App">
+      <form onSubmit={handleSubmit} action="/thank-you/">
+        <p>
+          <label>
+            Your Name: <input type="text" name="name" value={name} onChange={handleChange} />
+          </label>
+        </p>
+        <p>
+          <label>
+            Your Email: <input type="email" name="email" value={email} onChange={handleChange} />
+          </label>
+        </p>
+        <p>
+          <label>
+            Message: <textarea name="message" value={message} onChange={handleChange} />
+          </label>
+        </p>
+        <div {...getRootProps()}>
+          <input {...getInputProps()} />
+          {isDragActive ? <p>Drop the files here ...</p> : <p>Drag and drop some files here, or click to select files</p>}
+        </div>
+        <p>
+          <button type="submit">Send</button>
+        </p>
+      </form>
+      <h3>{status}</h3>
+    </div>
   );
 }
+
+export default TestForm;
