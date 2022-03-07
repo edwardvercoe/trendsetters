@@ -66,7 +66,7 @@ export default function IndividualForm(props) {
 
   return (
     <>
-      <form name="individual-form" netlify>
+      <form name="individual-form" action="/success" method="POST" data-netlify="true">
         <h4>Individual Nomination</h4>
 
         <TextInput placeholder="Nominee's name" id="nominee-name" name="nominee-name" required />
