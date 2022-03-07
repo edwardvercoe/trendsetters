@@ -90,7 +90,7 @@ export default function IndividualForm(props) {
 
   return (
     <>
-      <form onSubmit={handleSubmit} action="/thank-you/">
+      <form onSubmit={handleSubmit} action="/thank-you/" netlify>
         <h4>Individual Nomination</h4>
 
         <TextInput placeholder="Nominee's name" id="nominee-name" name="nominee-name" required />
