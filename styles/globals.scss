@@ -24,7 +24,8 @@ h5 {
   color: var(--color-accent);
 }
 
-form span {
+form span,
+.formSpan {
   font-size: 0.75rem;
   color: var(--color-dark);
   display: block;

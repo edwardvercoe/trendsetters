@@ -12,7 +12,7 @@ import { useRouter } from "next/router";
 
 const bytesToMegaBytes = (bytes, roundTo) => (roundTo ? (bytes / (1024 * 1024)).toFixed(roundTo) : bytes / (1024 * 1024));
 
-export default function IndividualForm({ submitterName, submissionType }) {
+export default function TeamForm({ submissionType, submitterName }) {
   // state management
   const [nomineeName, setNomineeName] = useState("");
   const [businessUnit, setBusinessUnit] = useState("");
@@ -39,6 +39,10 @@ export default function IndividualForm({ submitterName, submissionType }) {
     </span>
   ));
 
+  // end form logic
+
+  // Front end display
+
   const encode = (data) => {
     const formData = new FormData();
     Object.keys(data).forEach((k) => {
@@ -53,7 +57,7 @@ export default function IndividualForm({ submitterName, submissionType }) {
     // const newDate = String(pickDate);
     // console.log(newDate);
     // console.log("type of new date is " + typeof newDate);
-    const data = { "form-name": "individual-form", submitterName, nomineeName, businessUnit, entryName, elevatorPitch, awardCategory, file };
+    const data = { "form-name": "team-form", submitterName, nomineeName, businessUnit, entryName, elevatorPitch, awardCategory, file };
 
     console.log(data);
 
@@ -91,10 +95,10 @@ export default function IndividualForm({ submitterName, submissionType }) {
   };
   return (
     <FormWrapper submissionType={submissionType}>
-      <form onSubmit={handleSubmit} name="individual-form" action="/success" method="POST" data-netlify="true">
-        <input type="hidden" name="form-name" value="individual-form" />
+      <form onSubmit={handleSubmit} name="team-form" action="/success" method="POST" data-netlify="true">
+        <input type="hidden" name="form-name" value="team-form" />
 
-        <h4>Individual Nomination</h4>
+        <h4>Team Nomination</h4>
         <SecretInput>
           <TextInput type="text" placeholder="Your name" name="submitterName" value={submitterName} />
         </SecretInput>
@@ -212,7 +216,7 @@ const StyledButton = styled.button`
 `;
 
 const FormWrapper = styled.div`
-  display: ${(props) => (props.submissionType == "individual" ? "visible" : "none")};
+  display: ${(props) => (props.submissionType == "team" ? "visible" : "none")};
 `;
 
 const SecretInput = styled.div`
