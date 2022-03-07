@@ -52,11 +52,12 @@ export default function IndividualForm(props) {
   };
 
   const handleSubmit = (e) => {
-    const newDate = JSON.stringify(pickDate);
+    setCompletionDate(JSON.stringify(completionDate));
+
     // const newDate = String(pickDate);
     // console.log(newDate);
     // console.log("type of new date is " + typeof newDate);
-    const data = { "form-name": "individual-form", nomineeName, businessUnit, entryName, elevatorPitch, awardCategory, completionDate: newDate, file };
+    const data = { "form-name": "individual-form", nomineeName, businessUnit, entryName, elevatorPitch, awardCategory, file };
 
     console.log(data);
 
@@ -141,7 +142,7 @@ export default function IndividualForm(props) {
           {fileRejections.length ? <span className="error">file too big.. Max file upload size is 300KB</span> : null}
         </StyledDragDrop>
         <span>Upload supporting documents</span>
-
+        {/* 
         <DatePicker
           inputFormat="DD/MM/YYYY"
           type="text"
@@ -152,7 +153,7 @@ export default function IndividualForm(props) {
           onChange={setCompletionDate}
           required
         />
-        <span>Must be within calendar year 2022</span>
+        <span>Must be within calendar year 2022</span> */}
 
         <StyledButton className="submitForm" type="submit">
           Submit
