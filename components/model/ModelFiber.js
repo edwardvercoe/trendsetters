@@ -7,7 +7,7 @@ import { Suspense } from "react";
 import * as THREE from "three";
 
 const Model = () => {
-  const model = useLoader(GLTFLoader, "./ts.glb");
+  const model = useLoader(GLTFLoader, "./ts2.glb");
   model.scene.rotation.y = -0.85;
 
   // model.scene.rotateX(0.05);
@@ -34,19 +34,19 @@ const Model = () => {
   //discourse.threejs.org/t/play-animation-with-scroll/27012/8
 
   window.addEventListener("scroll", function (e) {
-    let newValue = window.pageYOffset + 5;
+    let newValue = window.pageYOffset;
     let windowHeight = window.innerHeight;
 
-    // console.log(`window height: ${windowHeight} current height: ${newValue}`);
+    console.log(`window height: ${windowHeight} current height: ${newValue}`);
 
     // console.log(oldValue - newValue);
 
-    if (newValue > 655) {
+    if (newValue > 900) {
       return null;
-    } else if (newValue < 3) {
+    } else if (newValue < 5) {
       return null;
     } else {
-      mixer.update((newValue - oldValue) / 200);
+      mixer.update((newValue - oldValue) / 800);
     }
 
     // if (oldValue - newValue < 0) {

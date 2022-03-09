@@ -13,7 +13,7 @@ export default function ProjectHero() {
   return (
     <Section fullHeight noPadding>
       <ImageBlurContainer>
-        <Image objectPosition="center top" objectFit="cover" layout="fill" src={heroImage} alt="Hero image" />
+        <Image objectPosition="center center" objectFit="cover" layout="fill" src={heroImage} alt="Hero image" />
       </ImageBlurContainer>
       <ModelContainer>
         <ModelFiber />
@@ -70,7 +70,6 @@ const ImageBlurContainer = styled.div`
   position: absolute;
   left: 0;
   top: 0;
-  filter: blur(4px);
 `;
 
 const InnerContainer = styled.div`
