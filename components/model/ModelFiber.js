@@ -8,12 +8,13 @@ import * as THREE from "three";
 
 const Model = () => {
   const model = useLoader(GLTFLoader, "./ts.glb");
-  model.scene.rotateY(-0.36);
-  model.scene.rotateX(0.05);
+  model.scene.rotation.y = -0.85;
+
+  // model.scene.rotateX(0.05);
   useThree(({ camera }) => {
-    camera.position.x = -1.2;
-    camera.position.y = 2.2;
-    camera.position.z = 6;
+    camera.position.x = -0.7;
+    camera.position.y = 2.1;
+    camera.position.z = 5;
   });
 
   // Here's the animation part
@@ -36,9 +37,9 @@ const Model = () => {
     let newValue = window.pageYOffset + 5;
     let windowHeight = window.innerHeight;
 
-    console.log(`window height: ${windowHeight} current height: ${newValue}`);
+    // console.log(`window height: ${windowHeight} current height: ${newValue}`);
 
-    console.log(oldValue - newValue);
+    // console.log(oldValue - newValue);
 
     if (newValue > 655) {
       return null;
@@ -71,7 +72,7 @@ const Model = () => {
 
   return (
     <>
-      <primitive object={model.scene} scale={5} />
+      <primitive object={model.scene} scale={5.5} />
     </>
   );
 };

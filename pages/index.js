@@ -28,7 +28,7 @@ export default function HomePage() {
       <Hero />
       <Section>
         <Container>
-          <Heading>TRENDsetters nomination form</Heading>
+          <Heading id="fold">TRENDsetters nomination form</Heading>
           <InnerContainer>
             <TextInput placeholder="Your name" name="submitterNameMaster" value={submitterName} onChange={handleChange} />
             <span className="formSpan">Name of person submitting the nomination</span>
@@ -37,7 +37,7 @@ export default function HomePage() {
               <Chip value="team">Team</Chip>
             </Chips>
             <span className="formSpan">Select individual or team nominations</span>
-
+            <div className="spacing"></div>
             <PlaceholderForm submissionType={submissionType} />
             <IndividualForm submitterName={submitterName} submissionType={submissionType} />
 
@@ -51,10 +51,16 @@ export default function HomePage() {
 
 const Heading = styled.h1`
   text-align: center;
+  padding-top: 100px;
+  padding-bottom: 50px;
 `;
 
 const InnerContainer = styled.div`
   max-width: 768px;
   width: 100%;
   margin: 0 auto;
+
+  .spacing {
+    padding-bottom: 60px;
+  }
 `;
