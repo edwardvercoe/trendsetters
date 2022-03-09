@@ -8,8 +8,7 @@ import * as THREE from "three";
 
 const Model = () => {
   const model = useLoader(GLTFLoader, "./ts.glb");
-  console.log(model.scene);
-  model.scene.rotateY(-0.28);
+  model.scene.rotateY(-0.36);
   model.scene.rotateX(0.05);
   useThree(({ camera }) => {
     camera.position.x = -1.2;
@@ -24,7 +23,7 @@ const Model = () => {
     mixer = new THREE.AnimationMixer(model.scene);
     model.animations.forEach((clip) => {
       const action = mixer.clipAction(clip);
-      action.setLoop(THREE.LoopPingPong);
+      // action.setLoop(THREE.LoopPingPong);
       action.play();
     });
   }
@@ -34,13 +33,26 @@ const Model = () => {
   //discourse.threejs.org/t/play-animation-with-scroll/27012/8
 
   window.addEventListener("scroll", function (e) {
-    var newValue = window.pageYOffset;
+    let newValue = window.pageYOffset + 5;
+    let windowHeight = window.innerHeight;
 
-    if (oldValue - newValue < 0) {
-      mixer.update((newValue - oldValue) / 200);
-    } else if (oldValue - newValue > 0) {
+    console.log(`window height: ${windowHeight} current height: ${newValue}`);
+
+    console.log(oldValue - newValue);
+
+    if (newValue > 655) {
+      return null;
+    } else if (newValue < 3) {
+      return null;
+    } else {
       mixer.update((newValue - oldValue) / 200);
     }
+
+    // if (oldValue - newValue < 0) {
+    //   mixer.update((newValue - oldValue) / 200);
+    // } else if (oldValue - newValue > 0 && oldValue - newValue < 350) {
+    //   mixer.update((newValue - oldValue) / 200);
+    // }
     oldValue = newValue;
   });
 
@@ -51,9 +63,9 @@ const Model = () => {
 
   model.scene.traverse((child) => {
     if (child.isMesh) {
-      child.castShadow = true;
+      // child.castShadow = true;
       child.receiveShadow = true;
-      child.material.side = THREE.FrontSide;
+      // child.material.side = THREE.FrontSide;
     }
   });
 
@@ -72,7 +84,8 @@ export default function ModelFiber() {
 
         <Model />
         {/* <Environment preset="park" /> */}
-        <ambientLight intensity={1.1} />
+        <pointLight position={[-1, 2.7, 1.0]} color={0xffffff} intensity={1} />
+        <ambientLight intensity={0.7} />
       </Suspense>
     </Canvas>
   );
