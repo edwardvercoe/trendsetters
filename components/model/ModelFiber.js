@@ -8,12 +8,12 @@ import * as THREE from "three";
 
 const Model = () => {
   const model = useLoader(GLTFLoader, "./ts.glb");
-
+  console.log(model.scene);
+  model.scene.rotateY(-0.17);
   useThree(({ camera }) => {
     camera.position.x = -0.5;
     camera.position.y = 2;
     camera.position.z = 5;
-    camera.rotateY(0.05);
   });
 
   // Here's the animation part
@@ -70,8 +70,8 @@ export default function ModelFiber() {
         {/* <OrbitControls /> */}
 
         <Model />
-        <Environment preset="park" />
-        <ambientLight intensity={0.2} />
+        {/* <Environment preset="park" /> */}
+        <ambientLight intensity={1.1} />
       </Suspense>
     </Canvas>
   );
