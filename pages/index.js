@@ -7,6 +7,7 @@ import TeamForm from "@/components/forms/TeamForm";
 import styled from "styled-components";
 
 import Hero from "@/components/Hero";
+import ModelFiber from "@/components/model/ModelFiber";
 
 import { TextInput, Chip, Chips } from "@mantine/core";
 import PlaceholderForm from "@/components/forms/PlaceholderForm";
