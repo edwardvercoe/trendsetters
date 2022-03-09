@@ -9,11 +9,12 @@ import * as THREE from "three";
 const Model = () => {
   const model = useLoader(GLTFLoader, "./ts.glb");
   console.log(model.scene);
-  model.scene.rotateY(-0.17);
+  model.scene.rotateY(-0.28);
+  model.scene.rotateX(0.05);
   useThree(({ camera }) => {
-    camera.position.x = -0.5;
-    camera.position.y = 2;
-    camera.position.z = 5;
+    camera.position.x = -1.2;
+    camera.position.y = 2.2;
+    camera.position.z = 6;
   });
 
   // Here's the animation part

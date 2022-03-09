@@ -16,7 +16,7 @@ const StyledSection = styled.section`
   padding-left: ${(props) => (props.noPadding ? "0px" : "var(--padding-sides)")};
   padding-right: ${(props) => (props.noPadding ? "0px" : "var(--padding-sides)")};
   width: 100%;
-  border: 2px dotted var(--color-accent);
+  /* border: 2px dotted var(--color-accent); */
   width: 100%;
 
   overflow: ${(props) => (props.overflow ? "visible !important" : "hidden")};
