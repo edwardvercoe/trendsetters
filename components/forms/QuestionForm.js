@@ -5,10 +5,13 @@ import Container from "@/components/Container";
 import { TextInput, Textarea } from "@mantine/core";
 
 import styled from "styled-components";
+import { useRouter } from "next/router";
 
 export default function QuestionForm() {
   const [questionName, setQuestionName] = useState("");
   const [question, setQuestion] = useState("");
+
+  const router = useRouter();
 
   const encode = (data) => {
     const formData = new FormData();
@@ -49,7 +52,7 @@ export default function QuestionForm() {
           <form onSubmit={handleSubmit} name="question-form" action="/success" method="POST" data-netlify="true">
             <input type="hidden" name="form-name" value="question-form" />
 
-            <Styledh4>Submit the form below and we will answer as soon as we can</Styledh4>
+            <Styledh4 id="question">Submit the form below and we will answer as soon as we can</Styledh4>
 
             <TextInput type="text" placeholder="Name (Optional)" name="questionName" value={questionName} onChange={handleChange} />
             <span>Name (Optional)</span>

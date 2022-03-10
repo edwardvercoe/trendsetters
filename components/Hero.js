@@ -14,7 +14,7 @@ export default function ProjectHero() {
   return (
     <Section fullHeight noPadding>
       <ImageBlurContainer>
-        <Image objectPosition="center center" objectFit="cover" layout="fill" src={heroImage} alt="Hero image" />
+        <Image priority={true} placeholder="blur" objectPosition="center center" objectFit="cover" layout="fill" src={heroImage} alt="Hero image" />
       </ImageBlurContainer>
       <ModelContainer>
         <ModelFiber />
@@ -29,7 +29,9 @@ export default function ProjectHero() {
             <a href="#fold">
               <StyledButton>Nominate Now</StyledButton>
             </a>
-            <StyledButton>Ask a Q</StyledButton>
+            <a href="#question">
+              <StyledButton>Ask a Q</StyledButton>
+            </a>
           </div>
         </InnerContainer>
       </StyledContainer>
