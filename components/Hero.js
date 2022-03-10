@@ -6,6 +6,7 @@ import Image from "next/image";
 
 import heroImage from "@/assets/hero.png";
 import ModelFiber from "@/components/model/ModelFiber";
+import bp from "@/styles/breakpoints";
 
 import heroimg from "@/assets/heroimg.png";
 
@@ -46,6 +47,7 @@ const StyledButton = styled.button`
   border-radius: 6px;
   font-size: 1rem;
   cursor: pointer;
+  margin-bottom: 20px;
 `;
 
 const StyledContainer = styled.div`
@@ -70,6 +72,7 @@ const ImageBlurContainer = styled.div`
   position: absolute;
   left: 0;
   top: 0;
+  background-color: grey;
 `;
 
 const InnerContainer = styled.div`

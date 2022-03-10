@@ -19,7 +19,6 @@ export default function IndividualForm({ submitterName, submissionType }) {
   const [awardCategory, setAwardCategory] = useState("");
   const [entryName, setEntryName] = useState("");
   const [elevatorPitch, setElevatorPitch] = useState("");
-  const [completionDate, setCompletionDate] = useState("");
   const [file, setFile] = useState({});
 
   const router = useRouter();
@@ -48,14 +47,10 @@ export default function IndividualForm({ submitterName, submissionType }) {
   };
 
   const handleSubmit = (e) => {
-    setCompletionDate(JSON.stringify(completionDate));
-
     // const newDate = String(pickDate);
     // console.log(newDate);
     // console.log("type of new date is " + typeof newDate);
     const data = { "form-name": "individual-form", submitterName, nomineeName, businessUnit, entryName, elevatorPitch, awardCategory, file };
-
-    console.log(data);
 
     fetch("/", {
       method: "POST",
@@ -144,18 +139,6 @@ export default function IndividualForm({ submitterName, submissionType }) {
           {fileRejections.length ? <span className="error">file too big.. Max file upload size is 300KB</span> : null}
         </StyledDragDrop>
         <span>Upload supporting documents</span>
-        {/* 
-        <DatePicker
-          inputFormat="DD/MM/YYYY"
-          type="text"
-          placeholder="Completion date"
-          name="completionDate"
-          icon={<Image src={calendarIcon} alt="calendar icon" />}
-          value={completionDate}
-          onChange={setCompletionDate}
-          required
-        />
-        <span>Must be within calendar year 2022</span> */}
 
         <StyledButton className="submitForm" type="submit">
           Submit
@@ -195,14 +178,15 @@ const StyledDragDrop = styled.div`
   outline: none;
   transition: border 0.24s ease-in-out;
   cursor: pointer;
+  text-align: center;
 
   span.error {
-    color: red;
+    color: black;
     font-size: 1.25rem;
   }
 
   span.success {
-    color: green;
+    color: black;
     font-size: 1.25rem;
   }
 `;

@@ -7,10 +7,11 @@ import TeamForm from "@/components/forms/TeamForm";
 import styled from "styled-components";
 
 import Hero from "@/components/Hero";
-import ModelFiber from "@/components/model/ModelFiber";
+import Banner from "@/components/Banner";
 
 import { TextInput, Chip, Chips } from "@mantine/core";
 import PlaceholderForm from "@/components/forms/PlaceholderForm";
+import QuestionForm from "@/components/forms/QuestionForm";
 
 export default function HomePage() {
   const [submitterName, setSubmitterName] = useState("");
@@ -42,9 +43,13 @@ export default function HomePage() {
             <IndividualForm submitterName={submitterName} submissionType={submissionType} />
 
             <TeamForm submitterName={submitterName} submissionType={submissionType} />
+            <div className="spacing"></div>
           </InnerContainer>
         </Container>
       </Section>
+
+      <Banner />
+      <QuestionForm />
     </main>
   );
 }

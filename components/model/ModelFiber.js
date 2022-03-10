@@ -1,19 +1,24 @@
 import React from "react";
 import { Canvas, useThree } from "@react-three/fiber";
 import { useLoader, useFrame } from "@react-three/fiber";
-import { Environment, OrbitControls } from "@react-three/drei";
+import { Loader, OrbitControls } from "@react-three/drei";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import { Suspense } from "react";
 import * as THREE from "three";
 
 const Model = () => {
   const model = useLoader(GLTFLoader, "./ts2.glb");
-  model.scene.rotation.y = -0.85;
+  model.scene.rotation.y = -0.7;
 
   // model.scene.rotateX(0.05);
   useThree(({ camera }) => {
-    camera.position.x = -0.7;
-    camera.position.y = 2.1;
+    // camera.position.x = -0.7;
+    let windowWidth = window.innerWidth;
+    windowWidth > 600 ? (camera.position.x = -0.7) : (camera.position.x = 0.2);
+
+    windowWidth > 600 ? (camera.position.y = 1.6) : (camera.position.y = 0.4);
+
+    // camera.position.y = 1.6;
     camera.position.z = 5;
   });
 
@@ -37,7 +42,7 @@ const Model = () => {
     let newValue = window.pageYOffset;
     let windowHeight = window.innerHeight;
 
-    console.log(`window height: ${windowHeight} current height: ${newValue}`);
+    // console.log(`window height: ${windowHeight} current height: ${newValue}`);
 
     // console.log(oldValue - newValue);
 
@@ -72,22 +77,25 @@ const Model = () => {
 
   return (
     <>
-      <primitive object={model.scene} scale={5.5} />
+      <primitive object={model.scene} scale={4.5} />
     </>
   );
 };
 
 export default function ModelFiber() {
   return (
-    <Canvas>
-      <Suspense fallback={null}>
-        {/* <OrbitControls /> */}
+    <>
+      <Canvas>
+        <Suspense fallback={null}>
+          {/* <OrbitControls /> */}
 
-        <Model />
-        {/* <Environment preset="park" /> */}
-        <pointLight position={[-1, 2.7, 1.0]} color={0xffffff} intensity={1} />
-        <ambientLight intensity={0.7} />
-      </Suspense>
-    </Canvas>
+          <Model />
+          {/* <Environment preset="park" /> */}
+          <pointLight position={[-1, 2.7, 1.0]} color={0xffffff} intensity={1} />
+          <ambientLight intensity={0.7} />
+        </Suspense>
+      </Canvas>
+      <Loader />
+    </>
   );
 }

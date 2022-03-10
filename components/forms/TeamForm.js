@@ -1,5 +1,5 @@
 import React, { useState, useCallback } from "react";
-import { TextInput, Select, Textarea } from "@mantine/core";
+import { TextInput, Select, Textarea, MultiSelect } from "@mantine/core";
 
 import { DatePicker } from "@mantine/dates";
 import calendarIcon from "@/assets/calendar.svg";
@@ -14,12 +14,11 @@ const bytesToMegaBytes = (bytes, roundTo) => (roundTo ? (bytes / (1024 * 1024)).
 
 export default function TeamForm({ submissionType, submitterName }) {
   // state management
-  const [nomineeName, setNomineeName] = useState("");
+  const [memberName, setMemberName] = useState([]);
   const [businessUnit, setBusinessUnit] = useState("");
   const [awardCategory, setAwardCategory] = useState("");
   const [entryName, setEntryName] = useState("");
   const [elevatorPitch, setElevatorPitch] = useState("");
-  const [completionDate, setCompletionDate] = useState("");
   const [file, setFile] = useState({});
 
   const router = useRouter();
@@ -52,12 +51,8 @@ export default function TeamForm({ submissionType, submitterName }) {
   };
 
   const handleSubmit = (e) => {
-    setCompletionDate(JSON.stringify(completionDate));
-
-    // const newDate = String(pickDate);
-    // console.log(newDate);
-    // console.log("type of new date is " + typeof newDate);
-    const data = { "form-name": "team-form", submitterName, nomineeName, businessUnit, entryName, elevatorPitch, awardCategory, file };
+    // setMemberName(memberName.join(", "));
+    const data = { "form-name": "team-form", submitterName, memberName: memberName.join(", "), businessUnit, entryName, elevatorPitch, awardCategory, file };
 
     console.log(data);
 
@@ -74,8 +69,9 @@ export default function TeamForm({ submissionType, submitterName }) {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    if (name === "nomineeName") {
-      return setNomineeName(value);
+    if (name === "memberName") {
+      console.log(memberName);
+      return setMemberName(value);
     }
     if (name === "businessUnit") {
       return setBusinessUnit(value);
@@ -103,8 +99,18 @@ export default function TeamForm({ submissionType, submitterName }) {
           <TextInput type="text" placeholder="Your name" name="submitterName" value={submitterName} />
         </SecretInput>
 
-        <TextInput type="text" placeholder="Nominee's name" id="nominee-name" name="nomineeName" required value={nomineeName} onChange={handleChange} />
-        <span>Name of person being nominated</span>
+        {/* <TextInput type="text" placeholder="Nominee's name" id="nominee-name" name="nomineeName" required value={nomineeName} onChange={handleChange} /> */}
+        <MultiSelect
+          data={memberName}
+          placeholder="Member name"
+          name="memberName"
+          creatable
+          searchable
+          required
+          getCreateLabel={(query) => `+ Add member ${query}`}
+          onCreate={(query) => setMemberName((current) => [...current, query])}
+        />
+        <span>Name of team member(s)</span>
 
         <TextInput type="text" placeholder="Business unit" name="businessUnit" required value={businessUnit} onChange={handleChange} />
         <span>The name of the business unit the brief came from</span>
@@ -139,7 +145,7 @@ export default function TeamForm({ submissionType, submitterName }) {
           {acceptedFileItems.length ? (
             <span>{acceptedFileItems}</span>
           ) : (
-            <p>
+            <p className="description">
               Drag and drop some files here, or click to select files.
               <br />
               Max upload size is 300KB.
@@ -148,18 +154,6 @@ export default function TeamForm({ submissionType, submitterName }) {
           {fileRejections.length ? <span className="error">file too big.. Max file upload size is 300KB</span> : null}
         </StyledDragDrop>
         <span>Upload supporting documents</span>
-        {/* 
-        <DatePicker
-          inputFormat="DD/MM/YYYY"
-          type="text"
-          placeholder="Completion date"
-          name="completionDate"
-          icon={<Image src={calendarIcon} alt="calendar icon" />}
-          value={completionDate}
-          onChange={setCompletionDate}
-          required
-        />
-        <span>Must be within calendar year 2022</span> */}
 
         <StyledButton className="submitForm" type="submit">
           Submit
@@ -179,7 +173,7 @@ const getColor = (props) => {
   if (props.isFocused) {
     return "#2196f3";
   }
-  return "#eeeeee";
+  return "#e4e4e4";
 };
 
 const StyledDragDrop = styled.div`
@@ -195,18 +189,23 @@ const StyledDragDrop = styled.div`
   border-color: ${(props) => getColor(props)};
   border-style: dashed;
   background-color: ${(props) => (props.isDragAccept ? `#fefefe` : "#fafafa")};
+
   color: #bdbdbd;
   outline: none;
   transition: border 0.24s ease-in-out;
   cursor: pointer;
+  text-align: center;
+
+  .description {
+  }
 
   span.error {
-    color: red;
+    color: black;
     font-size: 1.25rem;
   }
 
   span.success {
-    color: green;
+    color: black;
     font-size: 1.25rem;
   }
 `;
