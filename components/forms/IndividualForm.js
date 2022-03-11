@@ -9,6 +9,7 @@ import styled from "styled-components";
 import { useDropzone } from "react-dropzone";
 
 import { useRouter } from "next/router";
+import uploadicon from "@/assets/uploadicon.png";
 
 const bytesToMegaBytes = (bytes, roundTo) => (roundTo ? (bytes / (1024 * 1024)).toFixed(roundTo) : bytes / (1024 * 1024));
 
@@ -123,22 +124,21 @@ export default function IndividualForm({ submitterName, submissionType }) {
         <span>Use client or campaign title</span>
 
         <Textarea type="text" placeholder="Elevator pitch" name="elevatorPitch" minRows={4} required value={elevatorPitch} onChange={handleChange} />
-        <span>Upload supporting documents</span>
+        <span>What piece of work you’re entering and why? Max 500 words</span>
 
         <StyledDragDrop {...getRootProps({ isFocused, isDragAccept, isDragReject })}>
           <input name="file" type="file" {...getInputProps()} />
           {acceptedFileItems.length ? (
             <span>{acceptedFileItems}</span>
           ) : (
-            <p>
-              Drag and drop some files here, or click to select files.
-              <br />
-              Max upload size is 300KB.
-            </p>
+            <div>
+              <Image src={uploadicon} alt="upload icon" />
+              <div className="browse-ul">Browse</div>
+            </div>
           )}
           {fileRejections.length ? <span className="error">file too big.. Max file upload size is 300KB</span> : null}
         </StyledDragDrop>
-        <span>Upload supporting documents</span>
+        <span>Upload supporting documents. Max upload size is 300KB.</span>
 
         <StyledButton className="submitForm" type="submit">
           Submit
@@ -160,7 +160,6 @@ const getColor = (props) => {
   }
   return "#eeeeee";
 };
-
 const StyledDragDrop = styled.div`
   height: 160px;
   width: 100%;
@@ -169,30 +168,43 @@ const StyledDragDrop = styled.div`
   flex-direction: column;
   align-items: center;
   padding: 20px;
-  border-width: 2px;
+
   border-radius: 6px;
-  border-color: ${(props) => getColor(props)};
-  border-style: dashed;
-  background-color: ${(props) => (props.isDragAccept ? `#fefefe` : "#fafafa")};
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-accent);
+  min-height: 170px;
+
   color: #bdbdbd;
   outline: none;
   transition: border 0.24s ease-in-out;
   cursor: pointer;
   text-align: center;
 
+  .browse-ul {
+    padding: 14px 54px;
+    background-color: white;
+    border-radius: 6px;
+    color: var(--color-accent);
+    margin-top: 28px;
+  }
+
   span.error {
-    color: black;
+    color: white;
     font-size: 1.25rem;
   }
 
   span.success {
-    color: black;
+    color: white;
     font-size: 1.25rem;
   }
 `;
 
 const StyledButton = styled.button`
   cursor: pointer;
+  margin-top: 36px;
 `;
 
 const FormWrapper = styled.div`

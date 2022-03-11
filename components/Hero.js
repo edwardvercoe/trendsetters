@@ -27,7 +27,7 @@ export default function ProjectHero() {
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut itaque suscipit assumenda ab officiis soluta cupiditate quam quas enim at!</p>
           <div className="buttonsDiv">
             <a href="#fold">
-              <StyledButton>Nominate Now</StyledButton>
+              <StyledButton className="btn-cta">Nominate Now</StyledButton>
             </a>
             <a href="#question">
               <StyledButton>Ask a Q</StyledButton>
@@ -50,6 +50,15 @@ const StyledButton = styled.button`
   font-size: 1rem;
   cursor: pointer;
   margin-bottom: 20px;
+
+  ${bp.device.mobile} {
+    min-width: 216px;
+  }
+
+  &.btn-cta {
+    background-color: var(--color-white);
+    color: #c6417f;
+  }
 `;
 
 const StyledContainer = styled.div`
@@ -89,8 +98,17 @@ const InnerContainer = styled.div`
   justify-content: center;
   max-width: 420px;
 
+  ${bp.device.mobile} {
+    justify-content: flex-end;
+    text-align: center;
+  }
+
   .buttonsDiv {
     padding-top: 30px;
+
+    ${bp.device.mobile} {
+      padding-bottom: 30px;
+    }
   }
 `;
 

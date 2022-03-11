@@ -33,10 +33,19 @@ export default function HomePage() {
           <InnerContainer>
             <TextInput placeholder="Your name" name="submitterNameMaster" value={submitterName} onChange={handleChange} />
             <span className="formSpan">Name of person submitting the nomination</span>
-            <Chips variant="filled" spacing="md" radius="xs" value={submissionType} onChange={setSubmissionType}>
-              <Chip value="individual">Individual</Chip>
-              <Chip value="team">Team</Chip>
-            </Chips>
+
+            <div className="flexy">
+              <div className="inlineBlock">
+                <p>Are you nominating an</p>
+              </div>
+              <div>
+                <Chips variant="filled" spacing="md" radius="xs" value={submissionType} onChange={setSubmissionType}>
+                  <Chip value="individual">Individual</Chip>
+                  <Chip value="team">Team</Chip>
+                </Chips>
+              </div>
+            </div>
+
             <span className="formSpan">Select individual or team nominations</span>
             <div className="spacing"></div>
             <PlaceholderForm submissionType={submissionType} />
@@ -67,5 +76,19 @@ const InnerContainer = styled.div`
 
   .spacing {
     padding-bottom: 60px;
+  }
+
+  .inlineBlock {
+    display: inline-block;
+  }
+
+  .flexy {
+    display: flex;
+    align-items: center;
+    p {
+      color: #727272;
+      font-size: 1.125rem;
+      padding-right: 10px;
+    }
   }
 `;

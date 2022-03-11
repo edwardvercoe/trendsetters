@@ -7,19 +7,23 @@ import { Suspense } from "react";
 import * as THREE from "three";
 
 const Model = () => {
+  let windowWidth = window.innerWidth;
   const model = useLoader(GLTFLoader, "./ts2.glb");
-  model.scene.rotation.y = -0.7;
+  model.scene.rotation.y = -0.55;
+  windowWidth > 600 ? (model.scene.rotation.y = -0.5) : (model.scene.rotation.y = -0.25);
 
   // model.scene.rotateX(0.05);
   useThree(({ camera }) => {
+    // camera.rotation.x = -0.2;
     // camera.position.x = -0.7;
-    let windowWidth = window.innerWidth;
-    windowWidth > 600 ? (camera.position.x = -0.7) : (camera.position.x = 0.2);
 
-    windowWidth > 600 ? (camera.position.y = 1.6) : (camera.position.y = 0.4);
+    windowWidth > 600 ? (camera.position.x = -0.7) : (camera.position.x = 1.3);
+
+    windowWidth > 600 ? (camera.position.y = 1.8) : (camera.position.y = -0.2);
 
     // camera.position.y = 1.6;
-    camera.position.z = 5;
+
+    windowWidth > 600 ? (camera.position.z = 8) : (camera.position.z = 11);
   });
 
   // Here's the animation part
@@ -77,7 +81,7 @@ const Model = () => {
 
   return (
     <>
-      <primitive object={model.scene} scale={4.5} />
+      <primitive object={model.scene} scale={5} />
     </>
   );
 };
@@ -85,7 +89,7 @@ const Model = () => {
 export default function ModelFiber() {
   return (
     <>
-      <Canvas>
+      <Canvas camera={{ fov: 45 }}>
         <Suspense fallback={null}>
           {/* <OrbitControls /> */}
 

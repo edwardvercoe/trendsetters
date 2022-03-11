@@ -10,3 +10,7 @@ const device = {
   desktop: `@media only screen and (min-width: ${size.lg})`,
 };
 export default { size, device };
+
+// ${bp.device.mobile} {
+//   font-size: 2rem;
+// }
