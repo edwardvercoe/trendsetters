@@ -1,19 +1,22 @@
-import React from "react";
+import React, { useRef } from "react";
 import { Canvas, useThree } from "@react-three/fiber";
 import { useLoader, useFrame } from "@react-three/fiber";
 import { Loader, OrbitControls } from "@react-three/drei";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import { Suspense } from "react";
 import * as THREE from "three";
+import { gsap } from "gsap";
 
 const Model = () => {
+  const { viewport, camera } = useThree();
+
   let windowWidth = window.innerWidth;
   const model = useLoader(GLTFLoader, "./ts2.glb");
   model.scene.rotation.y = -0.55;
   windowWidth > 600 ? (model.scene.rotation.y = -0.5) : (model.scene.rotation.y = -0.25);
 
   // model.scene.rotateX(0.05);
-  useThree(({ camera }) => {
+  useThree(({ camera, mouse }) => {
     // camera.rotation.x = -0.2;
     // camera.position.x = -0.7;
 
@@ -58,18 +61,22 @@ const Model = () => {
       mixer.update((newValue - oldValue) / 800);
     }
 
-    // if (oldValue - newValue < 0) {
-    //   mixer.update((newValue - oldValue) / 200);
-    // } else if (oldValue - newValue > 0 && oldValue - newValue < 350) {
-    //   mixer.update((newValue - oldValue) / 200);
-    // }
     oldValue = newValue;
   });
 
-  // useFrame((state, delta) => {
-  //   mixer?.update(delta);
-  // });
-  // *************************
+  var mouseTolerance = 0.02;
+
+  function onMouseMove(xPos, yPos) {
+    gsap.timeline().to(ref.current.rotation, { y: -0.5 + xPos * mouseTolerance });
+    gsap.timeline().to(ref.current.rotation, { x: -yPos * mouseTolerance });
+  }
+  const ref = useRef();
+  useFrame(({ mouse }) => {
+    const xPos = (mouse.x * viewport.width) / 2;
+    const yPos = (mouse.y * viewport.height) / 2;
+
+    onMouseMove(xPos, yPos);
+  });
 
   model.scene.traverse((child) => {
     if (child.isMesh) {
@@ -81,7 +88,7 @@ const Model = () => {
 
   return (
     <>
-      <primitive object={model.scene} scale={5} />
+      <primitive ref={ref} object={model.scene} scale={5} />
     </>
   );
 };

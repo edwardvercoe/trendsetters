@@ -21,23 +21,33 @@ export default function ProjectHero() {
       </ModelContainer>
       <StyledContainer>
         <InnerContainer>
-          <StyledFigure>
-            <Image src={heroimg} alt="trendsetters logo" />
-          </StyledFigure>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut itaque suscipit assumenda ab officiis soluta cupiditate quam quas enim at!</p>
-          <div className="buttonsDiv">
-            <a href="#fold">
-              <StyledButton className="btn-cta">Nominate Now</StyledButton>
-            </a>
-            <a href="#question">
-              <StyledButton>Ask a Q</StyledButton>
-            </a>
-          </div>
+          <ContentWrapper>
+            <StyledFigure>
+              <Image src={heroimg} alt="trendsetters logo" />
+            </StyledFigure>
+            <p>Trend Setters showcases and recognises individuals and teams doing great work to position Commercial Content as world class.</p>
+            <p>
+              <strong>Nominations close May 16</strong>
+            </p>
+            <div className="buttonsDiv">
+              <a href="#fold">
+                <StyledButton className="btn-cta">Nominate Now</StyledButton>
+              </a>
+              <a href="#question">
+                <StyledButton>Ask a Q</StyledButton>
+              </a>
+            </div>
+          </ContentWrapper>
         </InnerContainer>
       </StyledContainer>
     </Section>
   );
 }
+
+const ContentWrapper = styled.div`
+  position: relative;
+  z-index: 20;
+`;
 
 const StyledButton = styled.button`
   border: 1px solid var(--color-white);
@@ -118,4 +128,5 @@ const ModelContainer = styled.div`
   position: absolute;
   left: 0;
   top: 0;
+  z-index: 10;
 `;
