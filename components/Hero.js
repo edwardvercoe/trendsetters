@@ -8,41 +8,51 @@ import heroImage from "@/assets/hero.png";
 import ModelFiber from "@/components/model/ModelFiber";
 import bp from "@/styles/breakpoints";
 
-import heroimg from "@/assets/heroimg.png";
+import heroimg from "@/assets/trendlogo.png";
 
 export default function ProjectHero() {
   return (
     <Section fullHeight noPadding>
-      <ImageBlurContainer>
-        <Image priority={true} placeholder="blur" objectPosition="center center" objectFit="cover" layout="fill" src={heroImage} alt="Hero image" />
-      </ImageBlurContainer>
-      <ModelContainer>
-        <ModelFiber />
-      </ModelContainer>
-      <StyledContainer>
-        <InnerContainer>
-          <ContentWrapper>
-            <StyledFigure>
-              <Image src={heroimg} alt="trendsetters logo" />
-            </StyledFigure>
-            <p>Trend Setters showcases and recognises individuals and teams doing great work to position Commercial Content as world class.</p>
-            <p>
-              <strong>Nominations close May 16</strong>
-            </p>
-            <div className="buttonsDiv">
-              <a href="#fold">
-                <StyledButton className="btn-cta">Nominate Now</StyledButton>
-              </a>
-              <a href="#question">
-                <StyledButton>Ask a Q</StyledButton>
-              </a>
-            </div>
-          </ContentWrapper>
-        </InnerContainer>
-      </StyledContainer>
+      <SectionWrap>
+        <ImageBlurContainer>
+          <Image priority={true} placeholder="blur" objectPosition="center center" objectFit="cover" layout="fill" src={heroImage} alt="Hero image" />
+        </ImageBlurContainer>
+        <ModelContainer>
+          <ModelFiber />
+        </ModelContainer>
+        <StyledContainer>
+          <InnerContainer>
+            <ContentWrapper>
+              <StyledFigure>
+                <Image src={heroimg} alt="trendsetters logo" />
+              </StyledFigure>
+              <p>Trend Setters showcases and recognises individuals and teams doing great work to position Commercial Content as world class.</p>
+              <p>
+                <strong>Nominations close May 16</strong>
+              </p>
+              <div className="buttonsDiv">
+                <a href="#fold">
+                  <StyledButton className="btn-cta">Nominate Now</StyledButton>
+                </a>
+                <a href="#question">
+                  <StyledButton>Ask a Q</StyledButton>
+                </a>
+              </div>
+            </ContentWrapper>
+          </InnerContainer>
+        </StyledContainer>
+      </SectionWrap>
     </Section>
   );
 }
+
+const SectionWrap = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+`;
 
 const ContentWrapper = styled.div`
   position: relative;

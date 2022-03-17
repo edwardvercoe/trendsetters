@@ -15,6 +15,7 @@ import PlaceholderForm from "@/components/forms/PlaceholderForm";
 import QuestionForm from "@/components/forms/QuestionForm";
 import AccordionBlock from "@/components/AccordionBlock";
 import bp from "@/styles/breakpoints";
+import Navbar from "@/components/Navbar";
 
 export default function HomePage() {
   const [submitterName, setSubmitterName] = useState("");
@@ -35,6 +36,7 @@ export default function HomePage() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <Navbar />
       <Hero />
       <AccordionBlock />
       <Section>

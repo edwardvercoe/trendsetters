@@ -18,6 +18,7 @@ const StyledSection = styled.section`
   width: 100%;
   /* border: 2px dotted var(--color-accent); */
   width: 100%;
+  background-color: var(--color-white);
 
   overflow: ${(props) => (props.overflow ? "visible !important" : "hidden")};
 `;
