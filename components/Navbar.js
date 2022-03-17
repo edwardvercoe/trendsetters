@@ -3,7 +3,8 @@ import styled from "styled-components";
 import Image from "next/image";
 
 import trendlogo from "@/assets/navtrendlogo.png";
-import navbackground from "@/assets/navbg.png";
+import navbackground from "@/assets/navbackground.png";
+
 import bp from "@/styles/breakpoints";
 
 export default function Navbar() {
