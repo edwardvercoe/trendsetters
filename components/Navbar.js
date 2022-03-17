@@ -3,7 +3,7 @@ import styled from "styled-components";
 import Image from "next/image";
 
 import trendlogo from "@/assets/navtrendlogo.png";
-import navbg from "@/assets/navbg.png";
+import navbackground from "@/assets/navbg.png";
 import bp from "@/styles/breakpoints";
 
 export default function Navbar() {
@@ -19,7 +19,7 @@ export default function Navbar() {
   return (
     <StyledNav scrollValue={scroll} className={scroll > 500 ? "navFold" : null}>
       <StyledFigure>
-        <Image src={navbg} layout="fill" alt="trendsetters" />
+        <Image src={navbackground} layout="fill" alt="trendsetters" />
       </StyledFigure>
       <NavInner>
         <Logo>
