@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Image from "next/image";
 
 import trendlogo from "@/assets/navtrendlogo.png";
+import heroBG from "@/assets/hero.png";
 // import navbackground from "@/assets/navbackground.png";
 
 import bp from "@/styles/breakpoints";
@@ -19,12 +20,12 @@ export default function Navbar() {
 
   return (
     <StyledNav scrollValue={scroll} className={scroll > 500 ? "navFold" : null}>
-      {/* <StyledFigure>
-        <Image src={navbackground} layout="fill" alt="trendsetters" />
-      </StyledFigure> */}
+      <StyledFigure>
+        <Image src={heroBG} layout="fixed" alt="trendsetters" />
+      </StyledFigure>
       <NavInner>
         <Logo>
-          <Image layout="fill" src={trendlogo} alt="trendsetters logo" />
+          <Image lahout="raw" src={trendlogo} alt="trendsetters logo" />
         </Logo>
         <div className="buttonsDiv">
           <a href="#fold">
@@ -104,5 +105,6 @@ const StyledNav = styled.div`
   z-index: 999;
   transition: var(--transition-global);
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-  background-color: white;
+  overflow: hidden;
+  /* background-color: white; */
 `;
