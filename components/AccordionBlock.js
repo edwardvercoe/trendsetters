@@ -24,13 +24,7 @@ export default function AccordionBlock() {
 
         <AccordionContainer>
           <Accordion iconPosition="right" iconSize={20}>
-            <Accordion.Item
-              label={
-                <h5>
-                  Collaboration & Teamwork <span>- The Stronger Together Award for Collaboration & Teamwork</span>
-                </h5>
-              }
-            >
+            <Accordion.Item label={<h5>The Stronger Together Award for Collaboration & Teamwork</h5>}>
               <strong className="acc-success">Measures of success</strong>
               <p>- High level of collaboration and engagement</p>
               <p>- Accountability (ability to demonstrate shared effort and results)</p>
@@ -43,13 +37,7 @@ export default function AccordionBlock() {
               </div>
             </Accordion.Item>
 
-            <Accordion.Item
-              label={
-                <h5>
-                  Customer Success <span>- The Above and Beyond Award for Customer Success</span>
-                </h5>
-              }
-            >
+            <Accordion.Item label={<h5>The Above & Beyond Award for Customer Success</h5>}>
               <strong className="acc-success">Measures of success</strong>
               <p>- Responses that solve client needs</p>
               <p>- CSAT score - % increase</p>
@@ -61,13 +49,7 @@ export default function AccordionBlock() {
               </div>
             </Accordion.Item>
 
-            <Accordion.Item
-              label={
-                <h5>
-                  New Business <span>- The Big Catch Award for New Business</span>
-                </h5>
-              }
-            >
+            <Accordion.Item label={<h5>The Big Catch Award for New Business</h5>}>
               <strong className="acc-success">Measures of success</strong>
               <p>- Identification of growth opportunities</p>
               <p>- Leadership and ownership of plans</p>
@@ -78,13 +60,7 @@ export default function AccordionBlock() {
                 <p>All permanent commercial content roles are eligible, excluding GM’s</p>
               </div>
             </Accordion.Item>
-            <Accordion.Item
-              label={
-                <h5>
-                  Innovation & Initiative <span>- The Blue Sky and Beyond Award for Innovation & Creativity</span>
-                </h5>
-              }
-            >
+            <Accordion.Item label={<h5>The Blue Sky and Beyond Award for Innovation & Creativity</h5>}>
               <strong className="acc-success">Measures of success</strong>
               <p>- Excellence in content and creative</p>
               <p>- Originality of approach and storytelling </p>
@@ -96,7 +72,7 @@ export default function AccordionBlock() {
                 <p>All permanent commercial content roles are eligible, excluding GM’s</p>
               </div>
             </Accordion.Item>
-            <Accordion.Item label={<h5>Chairman&apos;s Award For Creativity</h5>}>
+            <Accordion.Item label={<h5>The MVP Award For Initiative & Tenacity</h5>}>
               <strong className="acc-success">Measures of success</strong>
               <p>- High level of initiative and ownership</p>
               <p>- Impact of work</p>
@@ -107,7 +83,7 @@ export default function AccordionBlock() {
                 <p>All permanent commercial content roles are eligible, excluding GM’s</p>
               </div>
             </Accordion.Item>
-            <Accordion.Item label={<h5>Audience Engagement</h5>}>
+            <Accordion.Item label={<h5>The Storytelling Award for Audience Engagement</h5>}>
               <strong className="acc-success">Measures of success</strong>
               <p>- Demonstrable subscription results or audience engagement</p>
               <p>- Innovation and originality</p>
@@ -118,7 +94,7 @@ export default function AccordionBlock() {
                 <p>All permanent commercial content roles are eligible, excluding GM’s</p>
               </div>{" "}
             </Accordion.Item>
-            <Accordion.Item label={<h5>Business Unit Of The Year</h5>}>
+            <Accordion.Item label={<h5>The 360 Award for Business Unit Of The Year</h5>}>
               <strong className="acc-success">Measures of success</strong>
               <p>- % of growth in revenue</p>
               <p>- Margin %</p>

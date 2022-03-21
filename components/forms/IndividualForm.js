@@ -106,13 +106,13 @@ export default function IndividualForm({ submitterName, submissionType }) {
           placeholder="Award Category"
           name="awardCategory"
           data={[
-            { value: "Collaboration and teamwork", label: "Collaboration and teamwork" },
-            { value: "Customer Success", label: "Customer Success" },
-            { value: "Business Success", label: "Business Success" },
-            { value: "Innovation and Innitiative", label: "Innovation and Innitiative" },
-            { value: "Chairman’s award for creativity", label: "Chairman’s award for creativity" },
-            { value: "Audience Engagement", label: "Audience Engagement" },
-            { value: "Business Unit of the year", label: "Business Unit of the year" },
+            { value: "The Stronger Together Award for Collaboration & Teamwork", label: "The Stronger Together Award for Collaboration & Teamwork" },
+            { value: "The Above & Beyond Award for Customer Success", label: "The Above & Beyond Award for Customer Success" },
+            { value: "The Big Catch Award for New Business", label: "The Big Catch Award for New Business" },
+            { value: "The Blue Sky and Beyond Award for Innovation & Creativity", label: "The Blue Sky and Beyond Award for Innovation & Creativity" },
+            { value: "The MVP Award For Initiative & Tenacity", label: "The MVP Award For Initiative & Tenacity" },
+            { value: "The Storytelling Award for Audience Engagement", label: "The Storytelling Award for Audience Engagement" },
+            { value: "The 360 Award for Business Unit Of The Year", label: "The 360 Award for Business Unit Of The Year" },
           ]}
           value={awardCategory}
           onChange={setAwardCategory}
