@@ -54,7 +54,7 @@ export default function TeamForm({ submissionType, submitterName }) {
 
   const handleSubmit = (e) => {
     // setMemberName(memberName.join(", "));
-    const data = { "form-name": "team-form", submitterName, memberName: memberName.join(", "), businessUnit, entryName, elevatorPitch, awardCategory, file };
+    const data = { "form-name": "team-form", submitterName, memberName: memberName.join(", "), businessUnit, entryName, elevatorPitch, awardCategory };
 
     console.log(data);
 
@@ -142,7 +142,7 @@ export default function TeamForm({ submissionType, submitterName }) {
         <Textarea type="text" placeholder="Elevator pitch" name="elevatorPitch" minRows={4} required value={elevatorPitch} onChange={handleChange} />
         <span>What piece of work you’re entering and why? Max 500 words</span>
 
-        <StyledDragDrop {...getRootProps({ isFocused, isDragAccept, isDragReject })}>
+        {/* <StyledDragDrop {...getRootProps({ isFocused, isDragAccept, isDragReject })}>
           <input name="file" type="file" {...getInputProps()} />
           {acceptedFileItems.length ? (
             <span>{acceptedFileItems}</span>
@@ -154,7 +154,7 @@ export default function TeamForm({ submissionType, submitterName }) {
           )}
           {fileRejections.length ? <span className="error">file too big.. Max file upload size is 300KB</span> : null}
         </StyledDragDrop>
-        <span>Upload supporting documents. Max upload size is 300KB.</span>
+        <span>Upload supporting documents. Max upload size is 300KB.</span> */}
 
         <StyledButton className="submitForm" type="submit">
           Submit

@@ -51,7 +51,7 @@ export default function IndividualForm({ submitterName, submissionType }) {
     // const newDate = String(pickDate);
     // console.log(newDate);
     // console.log("type of new date is " + typeof newDate);
-    const data = { "form-name": "individual-form", submitterName, nomineeName, businessUnit, entryName, elevatorPitch, awardCategory, file };
+    const data = { "form-name": "individual-form", submitterName, nomineeName, businessUnit, entryName, elevatorPitch, awardCategory };
 
     fetch("/", {
       method: "POST",
@@ -126,7 +126,7 @@ export default function IndividualForm({ submitterName, submissionType }) {
         <Textarea type="text" placeholder="Elevator pitch" name="elevatorPitch" minRows={4} required value={elevatorPitch} onChange={handleChange} />
         <span>What piece of work you’re entering and why? Max 500 words</span>
 
-        <StyledDragDrop {...getRootProps({ isFocused, isDragAccept, isDragReject })}>
+        {/* <StyledDragDrop {...getRootProps({ isFocused, isDragAccept, isDragReject })}>
           <input name="file" type="file" {...getInputProps()} />
           {acceptedFileItems.length ? (
             <span>{acceptedFileItems}</span>
@@ -138,7 +138,7 @@ export default function IndividualForm({ submitterName, submissionType }) {
           )}
           {fileRejections.length ? <span className="error">file too big.. Max file upload size is 300KB</span> : null}
         </StyledDragDrop>
-        <span>Upload supporting documents. Max upload size is 300KB.</span>
+        <span>Upload supporting documents. Max upload size is 300KB.</span> */}
 
         <StyledButton className="submitForm" type="submit">
           Submit
