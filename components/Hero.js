@@ -28,7 +28,7 @@ export default function ProjectHero() {
               </StyledFigure>
               <p>Trend Setters showcases and recognises individuals and teams doing great work to position Commercial Content as world class.</p>
               <p>
-                <strong>Nominations close May 16</strong>
+                <strong>Nominations close May 23</strong>
               </p>
               <div className="buttonsDiv">
                 <a href="#fold">
