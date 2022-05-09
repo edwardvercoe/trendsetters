@@ -16,6 +16,7 @@ import QuestionForm from "@/components/forms/QuestionForm";
 import AccordionBlock from "@/components/AccordionBlock";
 import bp from "@/styles/breakpoints";
 import Navbar from "@/components/Navbar";
+import PrizesBlock from "@/components/PrizesBlock";
 
 export default function HomePage() {
   const [submitterName, setSubmitterName] = useState("");
@@ -39,6 +40,7 @@ export default function HomePage() {
       <Navbar />
       <Hero />
       <AccordionBlock />
+      <PrizesBlock />
       <Section>
         <Container>
           <Heading id="fold">

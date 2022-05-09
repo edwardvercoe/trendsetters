@@ -31,12 +31,6 @@ export default function AccordionBlock() {
               <p>- Diversity in thinking</p>
               <p>- Strategic outcome</p>
 
-              <div className="prize">
-                <strong>Prize</strong>
-                <p>Trendsetter of the Year Award</p>
-                <p>1 x 5 day trip including flights and accommodation, valued at $10,000 to News Corp international HQ in NYC to spend with their equivalent team</p>
-              </div>
-
               <div className="eligibility">
                 <strong>Eligibility</strong>
                 <p>All permanent commercial content roles are eligible, excluding GM’s</p>
@@ -49,12 +43,6 @@ export default function AccordionBlock() {
               <p>- CSAT score - % increase</p>
               <p>- Proactive partnerships (anticipating and adapting changes in the market)</p>
               <p>- On-time/efficiency in delivery</p>
-
-              <div className="prize">
-                <strong>Prize</strong>
-                <p>Trendsetters Award</p>
-                <p>5 x $1500 credit to spend at an &apos;Education or Event&apos; of your choice.</p>
-              </div>
 
               <div className="eligibility">
                 <strong>Eligibility</strong>
@@ -69,11 +57,6 @@ export default function AccordionBlock() {
               <p>- % of opportunities converted</p>
               <p>- Relationship management and engagement </p>
 
-              <div className="prize">
-                <strong>Prize</strong>
-                <p>Trendsetters Award</p>
-                <p>5 x $1500 credit to spend at an &apos;Education or Event&apos; of your choice.</p>
-              </div>
               <div className="eligibility">
                 <strong>Eligibility</strong>
                 <p>All permanent commercial content roles are eligible, excluding GM’s</p>
@@ -85,13 +68,6 @@ export default function AccordionBlock() {
               <p>- Originality of approach and storytelling </p>
               <p>- Innovative design and delivery</p>
               <p>- Richness and depth of content</p>
-
-              <div className="prize">
-                <strong>Prize</strong>
-                <p>Trendsetting Team of the Year</p>
-                <p>Team Day off</p>
-                <p>$50 voucher pp x no. of people in team</p>
-              </div>
 
               <div className="eligibility">
                 <strong>Eligibility</strong>
@@ -121,12 +97,6 @@ export default function AccordionBlock() {
               <p>- Innovation and originality</p>
               <p>- Business success</p>
               <p>- Level of storytelling skills</p>
-              <div className="prize">
-                <strong>Prize</strong>
-                <p>Trendsetting Team of the Year</p>
-                <p>Team Day off</p>
-                <p>$50 voucher pp x no. of people in team</p>
-              </div>
               <div className="eligibility">
                 <strong>Eligibility</strong>
                 <p>All permanent commercial content roles are eligible, excluding GM’s</p>
@@ -140,12 +110,6 @@ export default function AccordionBlock() {
               <p>- Outstanding business success</p>
               <p>- Excellence and impact of work/content</p>
               <p>- Demonstrable improvement over 12 months</p>
-              <div className="prize">
-                <strong>Prize</strong>
-                <p>Trendsetting Team of the Year</p>
-                <p>Team Day off</p>
-                <p>$50 voucher pp x no. of people in team</p>
-              </div>
               <div className="eligibility">
                 <strong>Eligibility</strong>
                 <p>All permanent commercial content roles are eligible, excluding GM’s</p>
