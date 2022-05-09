@@ -80,12 +80,7 @@ export default function AccordionBlock() {
               <p>- Impact of work</p>
               <p>- Level of endeavour, courage and tenacity</p>
               <p>- Depth of knowledge and expertise</p>
-              <div className="prize">
-                <strong>Prize</strong>
-                <p>Trendsetting Team of the Year</p>
-                <p>Team Day off</p>
-                <p>$50 voucher pp x no. of people in team</p>
-              </div>
+
               <div className="eligibility">
                 <strong>Eligibility</strong>
                 <p>All permanent commercial content roles are eligible, excluding GM’s</p>
