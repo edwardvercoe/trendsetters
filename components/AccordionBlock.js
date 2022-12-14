@@ -299,7 +299,7 @@ export default function AccordionBlock() {
               </div>
 
               <div className="eligibility">
-              <p className="acc-success">Rebecca Nittolo - Digital Editor - taste.com.au and Australia's Best Recipes, Food Corp</p>
+              <p className="acc-success">Rebecca Nittolo - Digital Editor - taste.com.au and Australia‘s Best Recipes, Food Corp</p>
               </div>
 
               <div className="eligibility">
