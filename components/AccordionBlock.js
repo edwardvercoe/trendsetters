@@ -126,7 +126,7 @@ export default function AccordionBlock() {
             <Accordion.Item label={<h5>The Big Catch Award for New Business</h5>}>
             <strong className="acc-success">NOMINATIONS</strong>
              <div className="eligibility">
-              <strong className="acc-success">Keno: "Play The Numbers You Know"</strong>
+              <strong className="acc-success">Keno: Play The Numbers You Know</strong>
               </div> 
 
               <p>- Tara Duncan</p>
@@ -198,7 +198,7 @@ export default function AccordionBlock() {
               </div>
               
               <div className="eligibility">
-              <p className="acc-success">Oliver Vickers-Price - Travel, Food Corp 'Places' Bookable video project</p>
+              <p className="acc-success">Oliver Vickers-Price - Travel, Food Corp Places Bookable video project</p>
               </div>
               
               <div className="eligibility">
@@ -207,7 +207,7 @@ export default function AccordionBlock() {
 
               <div className="eligibility">
                <strong className="acc-success">WINNER</strong>
-                <h7>Oliver Vickers-Price - Travel, Food Corp 'Places' Bookable video project</h7>
+                <h7>Oliver Vickers-Price - Travel, Food Corp Places Bookable video project</h7>
               </div>
 
             </Accordion.Item>
