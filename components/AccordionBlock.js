@@ -126,7 +126,7 @@ export default function AccordionBlock() {
             <Accordion.Item label={<h5>The Big Catch Award for New Business</h5>}>
             <strong className="acc-success">NOMINATIONS</strong>
              <div className="eligibility">
-              <strong className="acc-success">Keno: Play The Numbers You Know</strong>
+              <strong className="acc-success">Keno: "Play The Numbers You Know"</strong>
               </div> 
 
               <p>- Tara Duncan</p>
@@ -198,7 +198,7 @@ export default function AccordionBlock() {
               </div>
               
               <div className="eligibility">
-              <p className="acc-success">Oliver Vickers-Price - Travel, Food Corp Places Bookable video project</p>
+              <p className="acc-success">Oliver Vickers-Price - Travel, Food Corp 'Places' Bookable video project</p>
               </div>
               
               <div className="eligibility">
@@ -207,7 +207,7 @@ export default function AccordionBlock() {
 
               <div className="eligibility">
                <strong className="acc-success">WINNER</strong>
-                <h7>Oliver Vickers-Price - Travel, Food Corp Places Bookable video project</h7>
+                <h7>Oliver Vickers-Price - Travel, Food Corp 'Places' Bookable video project</h7>
               </div>
 
             </Accordion.Item>
@@ -247,29 +247,68 @@ export default function AccordionBlock() {
 
             </Accordion.Item>
             <Accordion.Item label={<h5>The Storytelling Award for Audience Engagement</h5>}>
-              <strong className="acc-success">Measures of success</strong>
-              <p>- Demonstrable subscription results or audience engagement</p>
-              <p>- Innovation and originality</p>
-              <p>- Business success</p>
-              <p>- Level of storytelling skills</p>
+              <strong className="acc-success">NOMINATIONS</strong>
+
               <div className="eligibility">
-                <strong>Eligibility</strong>
-                <p>All permanent commercial content roles are eligible, excluding GM’s</p>
-              </div>{" "}
+              <p className="acc-success">Stephen Nadin - Tourism and Events Queensland - Days Like This Campaign</p>
+              </div>
+
+              <div className="eligibility">
+              <p className="acc-success">Andrea Thiis-Evenson, NewsCast - True Crime Australia</p>
+              </div>
+
+              <div className="eligibility">
+              <p className="acc-success">Michelle Southan - A new content model within Food Media Brands</p>
+              </div>
+
+              <div className="eligibility">
+              <p className="acc-success">Eva Chown, Head of Operations, CCP</p>
+              </div>
+
+              <div className="eligibility">
+               <strong className="acc-success">WINNER</strong>
+                <h7>Andrea Thiis-Evenson, NewsCast - True Crime Australia</h7>
+              </div>
+
             </Accordion.Item>
             <Accordion.Item label={<h5>The 360 Award for Business Unit Of The Year</h5>}>
-              <strong className="acc-success">Measures of success</strong>
-              <p>- % of growth in revenue</p>
-              <p>- Margin %</p>
-              <p>- Achievement of cost budget</p>
-              <p>- Outstanding business success</p>
-              <p>- Excellence and impact of work/content</p>
-              <p>- Demonstrable improvement over 12 months</p>
+              
               <div className="eligibility">
-                <strong>Eligibility</strong>
-                <p>All permanent commercial content roles are eligible, excluding GM’s</p>
-              </div>{" "}
+               <strong className="acc-success">WINNER</strong>
+                <h7>Medium Rare Content Agency</h7>
+              </div>
+
             </Accordion.Item>
+            <Accordion.Item label={<h5>TREDNSETTER OF THE YEAR AWARD</h5>}>
+              <strong className="acc-success">NOMINATIONS</strong>
+
+              <div className="eligibility">
+              <p className="acc-success">Shannon Hollis - Head of Commercial, Audio</p>
+              </div>
+
+              <div className="eligibility">
+              <p className="acc-success">Jane Scott - Creative Content Director, NewsAMP, CCP</p>
+              </div>
+
+              <div className="eligibility">
+              <p className="acc-success">Eva Chown - Head of Operations, CCP</p>
+              </div>
+
+              <div className="eligibility">
+              <p className="acc-success">Heather Jarvis - Head of Account Services, Suddenly</p>
+              </div>
+
+              <div className="eligibility">
+              <p className="acc-success">Rebecca Nittolo - Digital Editor - taste.com.au and Australia's Best Recipes, Food Corp</p>
+              </div>
+
+              <div className="eligibility">
+               <strong className="acc-success">WINNER</strong>
+                <h7>Heather Jarvis - Head of Account Services, Suddenly</h7>
+              </div>
+
+            </Accordion.Item>
+
           </Accordion>
         </AccordionContainer>
       </Container>
