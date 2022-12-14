@@ -21,7 +21,8 @@ h1,
 h2,
 h3,
 h4,
-h5 {
+h5,
+h7 {
   color: var(--color-accent);
 }
 
@@ -56,6 +57,12 @@ h5 {
   }
 }
 
+h7 {
+  font-size: 1.5rem;
+  margin-bottom:20px;
+  }
+
+
 .submitForm {
   width: 180px;
   background-color: unset;
@@ -82,4 +89,9 @@ input,
 textarea {
   border-radius: 6px !important;
   border-color: #969696 !important;
+}
+
+
+.winner p {
+  color: var(--color-accent);
 }
