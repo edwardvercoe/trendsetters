@@ -12,15 +12,37 @@ export default function AccordionBlock() {
       <Container>
         <BlurbCopy>
           <h2>PRIZES</h2>
+
           <p>
-            All winners from the individual award categories will be eligible to win the major prize of a 5-day trip to our international headquarters in NYC to spend with our local CC team. Return
-            Flights & accommodation included.
-            <br />
-            <br />
-            The remaining individual award category winners will receive a $1500 credit to spend at an ‘Education & Event’ of their choice.
-            <br />
-            <br />
-            The winners of the Business unit of the year award will receive a day off, plus a $50 voucher per person to enjoy on their own or with their team.
+          This year there are 4 team award categories this year, with the winner(s) of each receiving a <strong>$400 gift card</strong>. <em>Note, a team is between 2-15 people so for example, <strong>if there are 10 people in the team for a piece of work, each person will receive $400.</strong></em>
+          <br />
+          <br />
+          The big team award is The 360 Award for Business Unit of the Year, <strong>with the finalist receiving $5k to spend on a team event.</strong> The award winner will be selected by Mike Connaghan.
+          <br />
+          <br />
+          For the individual awards, we have 3 this year where each person will receive a <br /><strong>$2k Gift card</strong>.
+          <br />
+          <br />
+          The Trendsetter of the Year Award for All Round Excellence finalists will be selected by the CC SLT from all individual nominations submitted across all categories (so isn't open for nominations). <br /><br />These finalists will be asked to submit a 5min video which will be shared with Michael Miller, who will then select the winner. The winner will receive the major prize of visiting our international headquarters in NYC or our office in London with our local Commercial Content team. Return Flights & accommodation for 5 days (4 nights) are included.
+          <br />
+          <br />
+          <h3>DETAILS</h3>
+          <br />
+          <strong>To qualify for a Trendsetter award, an employee must meet the below requirements:</strong>
+          <br />
+          <br />
+          - Be a member of Commercial Content (including Medium Rare, Stockhead and Visual Domain). <em>Excludes GMs/CC SLT.</em><br />
+          - Must not have formally resigned and be employed at the time winners announced in June 2023<br />
+          - Must have been in their role for a minimum of 3 months<br />
+          - Not be on a formal performance plan during the program period<br />
+          - Must consistently role model News values<br />
+          - Must have received at least an 'achieved' in their most recent performance rating (ideally high achievement or outstanding)<br />
+          <br />
+          <br />
+          Nomination window is from 23rd January and will close on Friday 26 May 2023 at 5pm
+          <br />
+          <br />
+          <strong>Final selection process will be completed by end of June 2022. Winners will be announced at a CC Town Hall on Thursday 29 June 2023.</strong>
           </p>
         </BlurbCopy>
       </Container>

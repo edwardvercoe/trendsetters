@@ -39,8 +39,8 @@ export default function HomePage() {
       </Head>
       <Navbar />
       <Hero />
-      <AccordionBlock />
       <PrizesBlock />
+      <AccordionBlock />
       <Section>
         <Container>
           <Heading id="fold">
