@@ -23,7 +23,7 @@ export default function AccordionBlock() {
           For the individual awards, we have 3 this year where each person will receive a <br /><strong>$2k Gift card</strong>.
           <br />
           <br />
-          The finalists for the Trendsetter of the Year Award for All Round Excellence will be selected by the CC SLT from all individual nominations submitted across all categories (so isn&#39;t open for nominations). <br /><br />These finalists will be asked to submit a 5min video which will be shared with Michael Miller, who will then select the winner. The winner will receive the major prize of <strong>visiting our international headquarters in NYC or our office in London with our local Commercial Content team</stromg>. Return flights & accommodation for 5 days (4 nights) are included.
+          The finalists for the Trendsetter of the Year Award for All Round Excellence will be selected by the CC SLT from all individual nominations submitted across all categories (so isn&#39;t open for nominations). <br /><br />These finalists will be asked to submit a 5min video which will be shared with Michael Miller, who will then select the winner. The winner will receive the major prize of <strong>visiting our international headquarters in NYC or our office in London with our local Commercial Content team</strong>. Return flights & accommodation for 5 days (4 nights) are included.
           <br />
           <br />
           <h3>DETAILS</h3>
