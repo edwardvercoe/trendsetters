@@ -39,7 +39,7 @@ export default function AccordionBlock() {
           - Must have received at least an &quot;achieved&quot; in their most recent performance rating (ideally high achievement or outstanding)<br />
           <br />
           <br />
-          Nomination window is from 23rd January and will close on Friday 26 May 2023 at 5pm
+          Nomination window is from 3rd February and will close on Friday 26 May 2023 at 5pm
           <br />
           <br />
           <strong>Final selection process will be completed by end of June 2022. Winners will be announced at a CC Town Hall on Thursday 29 June 2023.</strong>
