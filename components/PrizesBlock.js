@@ -23,7 +23,7 @@ export default function AccordionBlock() {
           For the individual awards, we have 3 this year where each person will receive a <br /><strong>$2k Gift card</strong>.
           <br />
           <br />
-          The Trendsetter of the Year Award for All Round Excellence finalists will be selected by the CC SLT from all individual nominations submitted across all categories (so isn't open for nominations). <br /><br />These finalists will be asked to submit a 5min video which will be shared with Michael Miller, who will then select the winner. The winner will receive the major prize of visiting our international headquarters in NYC or our office in London with our local Commercial Content team. Return Flights & accommodation for 5 days (4 nights) are included.
+          The Trendsetter of the Year Award for All Round Excellence finalists will be selected by the CC SLT from all individual nominations submitted across all categories (so isn&quot;t open for nominations). <br /><br />These finalists will be asked to submit a 5min video which will be shared with Michael Miller, who will then select the winner. The winner will receive the major prize of visiting our international headquarters in NYC or our office in London with our local Commercial Content team. Return Flights & accommodation for 5 days (4 nights) are included.
           <br />
           <br />
           <h3>DETAILS</h3>
@@ -36,7 +36,7 @@ export default function AccordionBlock() {
           - Must have been in their role for a minimum of 3 months<br />
           - Not be on a formal performance plan during the program period<br />
           - Must consistently role model News values<br />
-          - Must have received at least an 'achieved' in their most recent performance rating (ideally high achievement or outstanding)<br />
+          - Must have received at least an &quot;achieved&quot; in their most recent performance rating (ideally high achievement or outstanding)<br />
           <br />
           <br />
           Nomination window is from 23rd January and will close on Friday 26 May 2023 at 5pm
