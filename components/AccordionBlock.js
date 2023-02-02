@@ -412,7 +412,7 @@ export default function AccordionBlock() {
               </div>
 
             </Accordion.Item>
-            <Accordion.Item label={<h5>TRENDSETTER OF THE YEAR AWARD</h5>}>
+            <Accordion.Item label={<h5>The Trendsetter of the Year Award</h5>}>
               <strong className="acc-success">NOMINATIONS</strong>
 
               <div className="eligibility">
