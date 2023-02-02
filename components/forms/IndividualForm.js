@@ -99,18 +99,13 @@ export default function IndividualForm({ submitterName, submissionType }) {
         <span>Name of person being nominated</span>
 
         <TextInput type="text" placeholder="Business unit" name="businessUnit" required value={businessUnit} onChange={handleChange} />
-        <span>The name of the business unit the brief came from</span>
+        <span>The name of the business unit the brief was created by</span>
 
         <Select
           type="text"
           placeholder="Award Category"
           name="awardCategory"
           data={[
-            { value: "The Stronger Together Award for Collaboration & Teamwork (Team award)", label: "The Stronger Together Award for Collaboration & Teamwork (Team award)" },
-            { value: "The Big Catch Award for New Business (Team award)", label: "The Big Catch Award for New Business (Team award)" },
-            { value: "The Blue Sky & Beyond Award for Innovation and Creativity (Team award)", label: "The Blue Sky & Beyond Award for Innovation and Creativity (Team award)" },
-            { value: "The Commercial Impact Award (Team award)", label: "The Commercial Impact Award (Team award)" },
-            { value: "The 360 Award for Business Unit of the Year (Team award)", label: "The 360 Award for Business Unit of the Year (Team award)" },
             { value: "The My Word Award for Written Craftmanship (Individual award)", label: "The My Word Award for Written Craftmanship (Individual award)" },
             { value: "The Visual Excellence Award for best use of Creative Direction or Design (Individual award)", label: "The Visual Excellence Award for best use of Creative Direction or Design (Individual award)" },
             { value: "The Unsung Hero Award (Individual Award)", label: "The Unsung Hero Award (Individual Award)" },
