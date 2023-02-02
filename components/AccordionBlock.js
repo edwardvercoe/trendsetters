@@ -26,10 +26,10 @@ export default function AccordionBlock() {
 
         <AccordionContainer>
           <Accordion iconPosition="right" iconSize={20}>
-            <Accordion.Item label={<h5>The Stronger Together Award for Collaboration & Teamwork</h5>}>
+            <Accordion.Item label={<h5>The Stronger Together Award for Collaboration &amp; Teamwork (Team)</h5>}>
               <strong className="acc-success">Measures of success</strong>
-              <p>- High level of collaboration and engagement</p>
-              <p>- Accountability (ability to demonstrate shared effort and results)</p>
+              <p>- Demonstrates a High level of collaboration and engagement</p>
+              <p>- Accountability (ability to demonstrate shared effort, results and desire to have the right mix of expertise</p>
               <p>- Diversity in thinking</p>
               <p>- Strategic outcome</p>
 
@@ -39,12 +39,12 @@ export default function AccordionBlock() {
               </div>
             </Accordion.Item>
 
-            <Accordion.Item label={<h5>The Above & Beyond Award for Customer Success</h5>}>
+            <Accordion.Item label={<h5>The Big Catch Award for New Business (Team)</h5>}>
               <strong className="acc-success">Measures of success</strong>
-              <p>- Responses that solve client needs</p>
-              <p>- CSAT score - % increase</p>
-              <p>- Proactive partnerships (anticipating and adapting changes in the market)</p>
-              <p>- On-time/efficiency in delivery</p>
+              <p>- Proven new revenue in FY23</p>
+              <p>- Demonstrated a team work approach to winning the business</p>
+              <p>- Demonstrated leadership and strategy to win the new revenue</p>
+              <p>- Relationship management and engagement</p>
 
               <div className="eligibility">
                 <strong>Eligibility</strong>
@@ -52,54 +52,31 @@ export default function AccordionBlock() {
               </div>
             </Accordion.Item>
 
-            <Accordion.Item label={<h5>The Big Catch Award for New Business</h5>}>
+              <Accordion.Item label={<h5>The Blue Sky & Beyond Award for Innovation &amp; Creativity (Team)</h5>}>
               <strong className="acc-success">Measures of success</strong>
-              <p>- Identification of growth opportunities</p>
-              <p>- Leadership and ownership of plans</p>
-              <p>- % of opportunities converted</p>
-              <p>- Relationship management and engagement </p>
+              <p>- Demonstrates excellence in content and creative strategy and delivery</p>
+              <p>- Originality of approach and storytelling</p>
+              <p>- Demonstrates an Innovative approach that is new or growing in the CC business</p>
 
               <div className="eligibility">
                 <strong>Eligibility</strong>
                 <p>All permanent commercial content roles are eligible, excluding GM’s</p>
               </div>
             </Accordion.Item>
-            <Accordion.Item label={<h5>The Blue Sky and Beyond Award for Innovation & Creativity</h5>}>
-              <strong className="acc-success">Measures of success</strong>
-              <p>- Excellence in content and creative</p>
-              <p>- Originality of approach and storytelling </p>
-              <p>- Innovative design and delivery</p>
-              <p>- Richness and depth of content</p>
 
-              <div className="eligibility">
-                <strong>Eligibility</strong>
-                <p>All permanent commercial content roles are eligible, excluding GM’s</p>
-              </div>
-            </Accordion.Item>
-            <Accordion.Item label={<h5>The MVP Award For Initiative & Tenacity</h5>}>
+            <Accordion.Item label={<h5>The Commercial Impact Award (Team)</h5>}>
               <strong className="acc-success">Measures of success</strong>
-              <p>- High level of initiative and ownership</p>
-              <p>- Impact of work</p>
-              <p>- Level of endeavour, courage and tenacity</p>
-              <p>- Depth of knowledge and expertise</p>
-
-              <div className="eligibility">
-                <strong>Eligibility</strong>
-                <p>All permanent commercial content roles are eligible, excluding GM’s</p>
-              </div>
-            </Accordion.Item>
-            <Accordion.Item label={<h5>The Storytelling Award for Audience Engagement</h5>}>
-              <strong className="acc-success">Measures of success</strong>
-              <p>- Demonstrable subscription results or audience engagement</p>
+              <p>- Demonstrable impact on subscription results or  audience engagement or value delivered to clients through exceeding their KPIs</p>
               <p>- Innovation and originality</p>
-              <p>- Business success</p>
               <p>- Level of storytelling skills</p>
+
               <div className="eligibility">
                 <strong>Eligibility</strong>
                 <p>All permanent commercial content roles are eligible, excluding GM’s</p>
-              </div>{" "}
+              </div>
             </Accordion.Item>
-            <Accordion.Item label={<h5>The 360 Award for Business Unit Of The Year</h5>}>
+
+            <Accordion.Item label={<h5>The 360 Award for Business Unit Of The Year (Team)</h5>}>
               <strong className="acc-success">Measures of success</strong>
               <p>- % of growth in revenue</p>
               <p>- Margin %</p>
@@ -110,6 +87,56 @@ export default function AccordionBlock() {
               <div className="eligibility">
                 <strong>Eligibility</strong>
                 <p>All permanent commercial content roles are eligible, excluding GM’s</p>
+              </div>{" "}
+            </Accordion.Item>
+
+            <Accordion.Item label={<h5>The My Word Award for Craftsmanship (Individual)</h5>}>
+              <strong className="acc-success">Measures of success</strong>
+              <p>- Demonstrates a high level of craftsmanship</p>
+              <p>- Long or short form eligible</p>
+              <p>- Proven engagement</p>
+              <p>- Positive client feedback</p>
+              <p>- All writing, scripting, and audio word executions eligible.</p>
+
+              <div className="eligibility">
+                <strong>Eligibility</strong>
+                <p>All permanent commercial content roles are eligible, excluding GM’s</p>
+              </div>
+            </Accordion.Item>
+            
+            <Accordion.Item label={<h5>The Visual Excellence Award for Craftsmanship (Individual)</h5>}>
+              <strong className="acc-success">Measures of success</strong>
+              <p>- High level of craftsmanship</p>
+              <p>- Execution across all mediums eligible</p>
+              <p>- Proven engagement</p>
+              <p>- Positive client feedback</p>
+              <p>- All visual creation across all mediums eligible</p>
+              <div className="eligibility">
+                <strong>Eligibility</strong>
+                <p>All permanent commercial content roles are eligible, excluding GM’s</p>
+              </div>{" "}
+            </Accordion.Item>
+
+            <Accordion.Item label={<h5>The Unsung Hero Award (Individual)</h5>}>
+              <strong className="acc-success">Measures of success</strong>
+              <p>- Demonstrates alignment to core values</p>
+              <p>- Consistently delivers on business objectives</p>
+              <p>- Demonstrates the ability to work collaboratively and autonomously where required</p>
+              <div className="eligibility">
+                <strong>Eligibility</strong>
+                <p>All permanent commercial content roles are eligible, excluding GM’s</p>
+              </div>{" "}
+            </Accordion.Item>
+
+             <Accordion.Item label={<h5>The Trendsetter of the Year Award for All Round Excellence (Individual)</h5>}>
+              <strong className="acc-success">Measures of success</strong>
+              <p>- Demonstrates a high level of initiative and ownership</p>
+              <p>- Ensures work has high level of impact in isolation as well as the broader CC business</p>
+              <p>- Demonstrates a high level of endeavour, courage and tenacity</p>
+              <p>- Works with others to share learnings and innovation.</p>
+              <div className="eligibility">
+                <strong>Eligibility</strong>
+                <p>Finalists will be selected by the CC SLT from all individual nominations submitted across all categories. This category isn&#39;t open for nominations.</p>
               </div>{" "}
             </Accordion.Item>
           </Accordion>
