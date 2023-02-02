@@ -14,7 +14,7 @@ export default function AccordionBlock() {
           <h2>PRIZES</h2>
 
           <p>
-          This year there are 4 team award categories this year, with the winner(s) of each receiving a <strong>$400 gift card</strong>. <em>Note, a team is between 2-15 people so for example, <strong>if there are 10 people in the team for a piece of work, each person will receive $400.</strong></em>
+          This year there are 4 team award categories, with the winner(s) of each receiving a <strong>$400 gift card</strong>. <em>Note, a team is between 2-15 people so for example, <strong>if there are 10 people in the team for a piece of work, each person will receive $400.</strong></em>
           <br />
           <br />
           The big team award is The 360 Award for Business Unit of the Year, <strong>with the finalist receiving $5k to spend on a team event.</strong> The award winner will be selected by Mike Connaghan.
@@ -23,7 +23,7 @@ export default function AccordionBlock() {
           For the individual awards, we have 3 this year where each person will receive a <br /><strong>$2k Gift card</strong>.
           <br />
           <br />
-          The Trendsetter of the Year Award for All Round Excellence finalists will be selected by the CC SLT from all individual nominations submitted across all categories (so isn&quot;t open for nominations). <br /><br />These finalists will be asked to submit a 5min video which will be shared with Michael Miller, who will then select the winner. The winner will receive the major prize of visiting our international headquarters in NYC or our office in London with our local Commercial Content team. Return Flights & accommodation for 5 days (4 nights) are included.
+          The finalists for the Trendsetter of the Year Award for All Round Excellence will be selected by the CC SLT from all individual nominations submitted across all categories (so isn&#39;t open for nominations). <br /><br />These finalists will be asked to submit a 5min video which will be shared with Michael Miller, who will then select the winner. The winner will receive the major prize of <strong>visiting our international headquarters in NYC or our office in London with our local Commercial Content team</stromg>. Return flights & accommodation for 5 days (4 nights) are included.
           <br />
           <br />
           <h3>DETAILS</h3>
@@ -42,7 +42,7 @@ export default function AccordionBlock() {
           Nomination window is from 3rd February and will close on Friday 26 May 2023 at 5pm
           <br />
           <br />
-          <strong>Final selection process will be completed by end of June 2022. Winners will be announced at a CC Town Hall on Thursday 29 June 2023.</strong>
+          <strong>Final selection process will be completed by end of June 2022. Winners will be announced at a Trendsetter Awards Ceremony on Thursday 29 June 2023.</strong>
           </p>
         </BlurbCopy>
       </Container>

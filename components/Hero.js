@@ -26,9 +26,10 @@ export default function ProjectHero() {
               <StyledFigure>
                 <Image src={heroimg} alt="trendsetters logo" />
               </StyledFigure>
-              <p>Trend Setters showcases and recognises individuals and teams doing great work to position Commercial Content as world class.</p>
+              <p>The Commercial Content Trendsetters program showcases and recognises individuals and teams doing exceptional work, changing the way we connect our audiences and brands through content to position our business as world class.</p>
+              <p>Trendsetters rewards innovation, collaboration, creativity, teamwork but also our ability to drive growth and scale as we deliver on our purpose to inform, advocate and inspire all <em>Australians.</em></p>
               <p>
-                <strong>Nominations close May 23rd 2023 at 5pm</strong>
+                <strong>Nominations close May 26th 2023 at 5pm</strong>
               </p>
               <div className="buttonsDiv">
                 <a href="#fold">
