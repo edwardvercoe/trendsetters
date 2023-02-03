@@ -147,7 +147,7 @@ export default function AccordionBlock() {
       <Container>
         <BlurbCopy>
           <h2>
-            Finalists &amp; Winners 2022</span>
+            Finalists <span>&amp; Winners 2022</span>
           </h2>
         </BlurbCopy>
 
