@@ -136,7 +136,7 @@ export default function AccordionBlock() {
               <p>- Works with others to share learnings and innovation.</p>
               <div className="eligibility">
                 <strong>Eligibility</strong>
-                <p>Finalists will be selected by the CC SLT from all individual nominations submitted across all categories. This category isn&#39;t open for nominations.</p>
+                <p>Finalists will be selected by the CC SLT from all individual nominations submitted across all other categories. This category isn&#39;t open for nominations.</p>
               </div>{" "}
             </Accordion.Item>
           </Accordion>
@@ -147,7 +147,7 @@ export default function AccordionBlock() {
       <Container>
         <BlurbCopy>
           <h2>
-            WINNERS <span>&amp; nominations 2022</span>
+            Finalists &amp; Winners 2022</span>
           </h2>
         </BlurbCopy>
 
