@@ -311,8 +311,6 @@ export default function AccordionBlock() {
 
 
             </Accordion.Item>
-
-              </Accordion.Item>
             <Accordion.Item label={<h5>The Commercial Impact Award</h5>}>
               <strong className="acc-success">NOMINATIONS</strong>
               
