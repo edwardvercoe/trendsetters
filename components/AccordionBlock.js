@@ -177,14 +177,15 @@ export default function AccordionBlock() {
 
               <div className="eligibility">
               <strong className="acc-success">WINNER</strong>
-               <div className="eligibility">
-              <strong className="acc-success">Ziploc-it-in | ommercial Content Production</strong>
+                <h7>Ziploc-it-in | ommercial Content Production</h7>
               </div>
+              <div className="winner">
               <p>- Brooke Lewis</p>
               <p>- Kristie Walden</p>
               <p>- Anthony Macarounas</p>
               <p>- Benjamin Squires</p>
               </div>
+
             </Accordion.Item>
 
 
@@ -514,7 +515,7 @@ export default function AccordionBlock() {
 
               <div className="eligibility">
                <strong className="acc-success">WINNER</strong>
-                <h7>Jo McKay - Head of Strategy & Client Innovation, Medium Rare</h7>
+                <h7>Jo McKay - Head of Strategy &amp; Client Innovation, </br>Medium Rare</h7>
               </div>
 
             </Accordion.Item>
