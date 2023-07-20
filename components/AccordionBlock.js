@@ -515,7 +515,7 @@ export default function AccordionBlock() {
 
               <div className="eligibility">
                <strong className="acc-success">WINNER</strong>
-                <h7>Jo McKay - Head of Strategy &amp; Client Innovation, </br>Medium Rare</h7>
+                <h7>Jo McKay - Head of Strategy &amp; Client Innovation, Medium Rare</h7>
               </div>
 
             </Accordion.Item>
